@@ -1,0 +1,17 @@
+{
+  "protocol": {
+    "name": "acp",
+    "version": "1.0",
+    "endpoint": "https://web.synertalk.com/api/commerce"
+  },
+  "transports": [
+    "https",
+    "sse",
+    "json-rpc"
+  ],
+  "api_base_url": "https://web.synertalk.com/api",
+  "merchant": {
+    "name": "Synertalk Cyber Defense & Blockchain Forensics",
+    "currency": "EUR"
+  }
+}

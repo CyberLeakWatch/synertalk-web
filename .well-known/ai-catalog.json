@@ -1,0 +1,31 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "name": "Synertalk Cyber Defense",
+    "domain": "web.synertalk.com"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:web.synertalk.com:service:nis2-audit",
+      "displayName": "NIS2 Perimeter & DMARC Audit",
+      "type": "text/markdown",
+      "url": "https://web.synertalk.com/llms.txt",
+      "representativeQueries": [
+        "auditar seguridad web nis2",
+        "blindaje dmarc correo empresa espana",
+        "cumplimiento directiva europea nis2"
+      ]
+    },
+    {
+      "identifier": "urn:air:web.synertalk.com:service:crypto-forensics",
+      "displayName": "Blockchain Judicial Forensics & CEX Interdiction",
+      "type": "text/markdown",
+      "url": "https://web.synertalk.com/llms-full.txt",
+      "representativeQueries": [
+        "peritaje judicial estafa criptomonedas espana",
+        "bloqueo de fondos en binance judicial",
+        "informe pericial iso 27037 bitcoin usdt"
+      ]
+    }
+  ]
+}

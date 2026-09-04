@@ -1,0 +1,20 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Synertalk Cyber Defense & Forensics API",
+    "version": "1.0.0",
+    "description": "API p\u00fablica para auditor\u00eda perimetral y peritaje judicial cripto"
+  },
+  "paths": {
+    "/api/audit": {
+      "get": {
+        "summary": "Auditor\u00eda perimetral DNS",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}

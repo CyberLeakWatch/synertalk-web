@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agentskills.io/schema/v0.2.0/index.json",
+  "skills": [
+    {
+      "id": "nis2-perimeter-audit",
+      "name": "nis2-perimeter-audit",
+      "version": "1.0.0",
+      "type": "skill",
+      "description": "Auditoría perimetral y verificación DMARC/SPF bajo la directiva NIS2",
+      "url": "https://web.synertalk.com/.well-known/agent-skills/nis2-audit/SKILL.md",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tags": [
+        "cybersecurity",
+        "nis2",
+        "dmarc"
+      ]
+    },
+    {
+      "id": "crypto-forensics-interdiction",
+      "name": "crypto-forensics-interdiction",
+      "version": "1.0.0",
+      "type": "skill",
+      "description": "Peritaje judicial oficial y preservación de fondos en Binance/OKX",
+      "url": "https://web.synertalk.com/.well-known/agent-skills/crypto-forensics/SKILL.md",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tags": [
+        "blockchain",
+        "forensics",
+        "interdiction"
+      ]
+    }
+  ]
+}
