@@ -11,8 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Three.js 3D/4D WebGL Holographic Engine CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -339,13 +337,8 @@
         </div>
     </header>
 
-    <!-- HERO SECTION: The Holographic Cockpit & Scanner -->
+    <!-- HERO SECTION: Executive Cockpit & Scanner -->
     <section class="relative px-6 pt-16 pb-24 lg:pt-24 lg:pb-36 overflow-hidden">
-        <!-- 4D Hyper-Tesseract WebGL Interactive Stage -->
-        <div id="hero-4d-stage" class="pointer-events-none absolute inset-0 z-0 flex items-center justify-center overflow-hidden opacity-45 sm:opacity-55 transition-opacity duration-700">
-            <canvas id="canvas-4d-tesseract" class="w-full h-full max-w-[1300px]"></canvas>
-        </div>
-
         <div class="relative z-10 mx-auto max-w-5xl text-center">
             
             <!-- Category Badge with Animated Pulse -->
@@ -367,17 +360,6 @@
             <p id="hero-p-desc" class="mx-auto mt-7 max-w-3xl text-base text-slate-300 sm:text-xl font-light leading-relaxed">
                 El 84% de despachos y empresas carecen de DMARC <code class="text-cyan-400 font-mono text-sm px-1.5 py-0.5 rounded bg-cyan-950/60 border border-cyan-500/30">p=reject</code>, exponiéndose a facturas falsas y sanciones NIS2. En Synertalk emitimos <strong>Dictámenes Periciales Oficiales con sellado SHA-256</strong> e <strong>interdicción de fondos cripto en horas doradas (0-72h)</strong>.
             </p>
-            <!-- 3D Cyber Shield & Blockchain Telemetry HUD Capsule -->
-            <div class="relative z-10 mx-auto mt-6 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-slate-950/75 px-4 py-1.5 backdrop-blur-xl shadow-xl font-mono text-[11px] text-slate-300">
-                <span class="relative flex h-2 w-2">
-                    <span id="tess-ping" class="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75"></span>
-                    <span id="tess-dot" class="relative inline-flex h-2 w-2 rounded-full bg-cyan-400"></span>
-                </span>
-                <span id="tess-hud-txt">ESCUDO 3D DE CIBERDEFENSA &bull; BÓVEDA & NODOS BLOCKCHAIN ACTIVOS</span>
-                <button type="button" onclick="trigger4DBoost()" class="ml-1 rounded-md border border-cyan-500/30 bg-cyan-500/10 px-2 py-0.5 text-[10px] font-bold text-cyan-400 hover:bg-cyan-500/25 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400" title="Escanear con pulso electromagnético 3D">
-                    <span id="tess-boost-txt">⚡ PULSO 3D</span>
-                </button>
-            </div>
 
             <!-- COCKPIT: LIVE SCANNER INPUT -->
             <div id="scanner" class="mx-auto mt-12 max-w-2xl">
@@ -1894,327 +1876,15 @@
 
 
         // ==========================================
-        // 3D CYBER DEFENSE SHIELD & BLOCKCHAIN CORE (THREE.JS)
+        // TACTICAL COCKPIT STATE ENGINE (LIGHTWEIGHT & ACCESSIBLE)
         // ==========================================
-        let tesseractScene, tesseractCamera, tesseractRenderer;
-        let mainShieldGroup, shieldMesh, shieldWire, lockGroup, lockBody, lockShackle;
-        let blockchainGroup, blockMeshes = [], chainOrbitLine, laserSweepMesh;
-        let current3DColor = null, target3DColor = null;
-        let rotSpeed = 0.008, targetSpeed = 0.008;
-        let mouseX = 0, mouseY = 0, targetMouseX = 0, targetMouseY = 0;
-        let isHeroVisible = true;
-        let laserDir = 1;
-
-        function init4DCore() {
-            const canvas = document.getElementById('canvas-4d-tesseract');
-            if (!canvas || typeof THREE === 'undefined') return;
-
-            current3DColor = new THREE.Color(0x00D2FF);
-            target3DColor = new THREE.Color(0x00D2FF);
-
-            tesseractScene = new THREE.Scene();
-            tesseractCamera = new THREE.PerspectiveCamera(50, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
-            tesseractCamera.position.z = 7.0;
-
-            tesseractRenderer = new THREE.WebGLRenderer({ 
-                canvas: canvas, 
-                alpha: true, 
-                antialias: true, 
-                powerPreference: "high-performance" 
-            });
-            tesseractRenderer.setSize(canvas.clientWidth, canvas.clientHeight);
-            tesseractRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-            mainShieldGroup = new THREE.Group();
-            tesseractScene.add(mainShieldGroup);
-
-            // Procedural Circuit Micro-Texture (No external asset download needed)
-            const circuitCanvas = document.createElement('canvas');
-            circuitCanvas.width = 256;
-            circuitCanvas.height = 256;
-            const ctx = circuitCanvas.getContext('2d');
-            ctx.fillStyle = '#051429';
-            ctx.fillRect(0, 0, 256, 256);
-            ctx.strokeStyle = 'rgba(0, 210, 255, 0.35)';
-            ctx.lineWidth = 1.5;
-            // Draw futuristic circuit lines & IC pins
-            for (let i = 20; i < 256; i += 40) {
-                ctx.beginPath();
-                ctx.moveTo(i, 0); ctx.lineTo(i, 80); ctx.lineTo(i + 20, 100); ctx.lineTo(i + 20, 256);
-                ctx.stroke();
-                ctx.beginPath();
-                ctx.moveTo(0, i); ctx.lineTo(80, i); ctx.lineTo(100, i + 20); ctx.lineTo(256, i + 20);
-                ctx.stroke();
-                // Nodes
-                ctx.fillStyle = 'rgba(0, 210, 255, 0.6)';
-                ctx.fillRect(i - 2, 80 - 2, 4, 4);
-                ctx.fillRect(80 - 2, i - 2, 4, 4);
-            }
-            const circuitTexture = new THREE.CanvasTexture(circuitCanvas);
-            circuitTexture.wrapS = THREE.RepeatWrapping;
-            circuitTexture.wrapT = THREE.RepeatWrapping;
-            circuitTexture.repeat.set(2, 2);
-
-            // 1. ESCUDO 3D DE CIBERDEFENSA (Extruded Cyber Shield)
-            const shieldShape = new THREE.Shape();
-            shieldShape.moveTo(0, 2.2);
-            shieldShape.bezierCurveTo(1.6, 2.2, 1.8, 1.1, 1.6, 0.1);
-            shieldShape.bezierCurveTo(1.4, -1.1, 0.7, -1.9, 0, -2.5);
-            shieldShape.bezierCurveTo(-0.7, -1.9, -1.4, -1.1, -1.6, 0.1);
-            shieldShape.bezierCurveTo(-1.8, 1.1, -1.6, 2.2, 0, 2.2);
-
-            const extrudeSettings = {
-                depth: 0.22,
-                bevelEnabled: true,
-                bevelSegments: 3,
-                steps: 1,
-                bevelSize: 0.08,
-                bevelThickness: 0.08
-            };
-
-            const shieldGeo = new THREE.ExtrudeGeometry(shieldShape, extrudeSettings);
-            shieldGeo.center();
-
-            const shieldMat = new THREE.MeshPhongMaterial({
-                color: 0x051429,
-                emissive: 0x00223E,
-                emissiveMap: circuitTexture,
-                bumpMap: circuitTexture,
-                bumpScale: 0.05,
-                specular: 0x00D2FF,
-                shininess: 90,
-                transparent: true,
-                opacity: 0.90
-            });
-            shieldMesh = new THREE.Mesh(shieldGeo, shieldMat);
-            mainShieldGroup.add(shieldMesh);
-
-            // Malla de alambre brillante del perímetro del escudo
-            const wireGeo = new THREE.EdgesGeometry(shieldGeo);
-            const wireMat = new THREE.LineBasicMaterial({ color: current3DColor, transparent: true, opacity: 0.9 });
-            shieldWire = new THREE.LineSegments(wireGeo, wireMat);
-            mainShieldGroup.add(shieldWire);
-
-            // 2. CANDADO / NÚCLEO CRIPTOGRÁFICO EN EL CENTRO
-            lockGroup = new THREE.Group();
-
-            const lockBodyGeo = new THREE.BoxGeometry(0.85, 0.7, 0.32);
-            const lockBodyMat = new THREE.MeshStandardMaterial({
-                color: current3DColor,
-                metalness: 0.8,
-                roughness: 0.25,
-                emissive: 0x002B4D
-            });
-            lockBody = new THREE.Mesh(lockBodyGeo, lockBodyMat);
-            lockBody.position.y = -0.18;
-            lockGroup.add(lockBody);
-
-            const shackleGeo = new THREE.TorusGeometry(0.32, 0.08, 16, 32, Math.PI);
-            const shackleMat = new THREE.MeshStandardMaterial({
-                color: 0xF8FAFC,
-                metalness: 0.9,
-                roughness: 0.15
-            });
-            lockShackle = new THREE.Mesh(shackleGeo, shackleMat);
-            lockShackle.position.set(0, 0.17, 0);
-            lockGroup.add(lockShackle);
-
-            // Ojo de cerradura / Core Hash
-            const keyholeGeo = new THREE.CylinderGeometry(0.07, 0.07, 0.35, 16);
-            const keyholeMat = new THREE.MeshBasicMaterial({ color: 0x030712 });
-            const keyhole = new THREE.Mesh(keyholeGeo, keyholeMat);
-            keyhole.rotation.x = Math.PI / 2;
-            keyhole.position.set(0, -0.18, 0.02);
-            lockGroup.add(keyhole);
-
-            lockGroup.position.z = 0.18;
-            mainShieldGroup.add(lockGroup);
-
-            // 3. ANILLO DE BLOQUES BLOCKCHAIN ORBITALES (Ledger Nodes)
-            blockchainGroup = new THREE.Group();
-            const blockGeo = new THREE.BoxGeometry(0.2, 0.2, 0.2);
-            const blockMat = new THREE.MeshStandardMaterial({
-                color: current3DColor,
-                metalness: 0.7,
-                roughness: 0.2
-            });
-            const blockWireMat = new THREE.LineBasicMaterial({ color: 0xFFFFFF });
-
-            const blockCount = 12;
-            const orbitRadius = 3.1;
-            blockMeshes = [];
-
-            for (let i = 0; i < blockCount; i++) {
-                const angle = (i / blockCount) * Math.PI * 2;
-                const bMesh = new THREE.Mesh(blockGeo, blockMat.clone());
-                bMesh.position.set(
-                    Math.cos(angle) * orbitRadius, 
-                    Math.sin(angle) * (orbitRadius * 0.42), 
-                    Math.sin(angle) * 1.1
-                );
-                
-                const bWire = new THREE.LineSegments(new THREE.EdgesGeometry(blockGeo), blockWireMat);
-                bMesh.add(bWire);
-
-                blockchainGroup.add(bMesh);
-                blockMeshes.push(bMesh);
-            }
-
-            // Elipse de conexión de transacciones
-            const chainCurve = new THREE.EllipseCurve(0, 0, orbitRadius, orbitRadius * 0.42, 0, 2 * Math.PI, false, 0);
-            const points = chainCurve.getPoints(64);
-            const chainLineGeo = new THREE.BufferGeometry().setFromPoints(points.map(p => new THREE.Vector3(p.x, p.y, 0)));
-            chainOrbitLine = new THREE.Line(chainLineGeo, new THREE.LineBasicMaterial({ color: current3DColor, transparent: true, opacity: 0.45 }));
-            blockchainGroup.add(chainOrbitLine);
-
-            blockchainGroup.rotation.x = Math.PI / 3.8;
-            mainShieldGroup.add(blockchainGroup);
-
-            // 4. LÁSER DE ESCANEO PERIMETRAL (Radar Scan Sweep)
-            const laserGeo = new THREE.PlaneGeometry(3.4, 0.04);
-            const laserMat = new THREE.MeshBasicMaterial({
-                color: 0x00E599,
-                transparent: true,
-                opacity: 0.85,
-                side: THREE.DoubleSide
-            });
-            laserSweepMesh = new THREE.Mesh(laserGeo, laserMat);
-            laserSweepMesh.position.z = 0.25;
-            mainShieldGroup.add(laserSweepMesh);
-
-            // Iluminación
-            const ambient = new THREE.AmbientLight(0xFFFFFF, 0.65);
-            tesseractScene.add(ambient);
-
-            const pointLight = new THREE.PointLight(0x00D2FF, 2.2, 25);
-            pointLight.position.set(3, 4, 6);
-            tesseractScene.add(pointLight);
-
-            const purpleLight = new THREE.PointLight(0xA855F7, 1.8, 25);
-            purpleLight.position.set(-4, -3, 4);
-            tesseractScene.add(purpleLight);
-
-            const rimLight = new THREE.DirectionalLight(0xD3B49A, 0.8);
-            rimLight.position.set(0, 4, -5);
-            tesseractScene.add(rimLight);
-
-            // Mouse y Touch Parallax
-            window.addEventListener('mousemove', (e) => {
-                targetMouseX = (e.clientX / window.innerWidth - 0.5) * 1.2;
-                targetMouseY = (e.clientY / window.innerHeight - 0.5) * 1.2;
-            }, { passive: true });
-
-            window.addEventListener('touchmove', (e) => {
-                if (e.touches.length > 0) {
-                    targetMouseX = (e.touches[0].clientX / window.innerWidth - 0.5) * 1.2;
-                    targetMouseY = (e.touches[0].clientY / window.innerHeight - 0.5) * 1.2;
-                }
-            }, { passive: true });
-
-            window.addEventListener('resize', on4DResize);
-
-            // Intersection Observer para optimizar batería
-            const heroSection = document.getElementById('hero-4d-stage');
-            if (heroSection && 'IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        isHeroVisible = entry.isIntersecting;
-                    });
-                }, { threshold: 0.1 });
-                observer.observe(heroSection);
-            }
-
-            animate4D();
-        }
-
-        function on4DResize() {
-            const canvas = document.getElementById('canvas-4d-tesseract');
-            if (!canvas || !tesseractRenderer || !tesseractCamera) return;
-            const width = canvas.parentElement.clientWidth;
-            const height = canvas.parentElement.clientHeight;
-            tesseractCamera.aspect = width / height;
-            tesseractCamera.updateProjectionMatrix();
-            tesseractRenderer.setSize(width, height);
-        }
-
-        function animate4D() {
-            requestAnimationFrame(animate4D);
-            if (!isHeroVisible || !tesseractRenderer) return;
-
-            // Decaimiento de velocidad de pulso
-            rotSpeed += (targetSpeed - rotSpeed) * 0.04;
-
-            // Parallax del ratón
-            mouseX += (targetMouseX - mouseX) * 0.05;
-            mouseY += (targetMouseY - mouseY) * 0.05;
-
-            // Rotación suave oscilante del escudo
-            mainShieldGroup.rotation.y = (Math.sin(Date.now() * 0.001) * 0.28) + (mouseX * 0.6);
-            mainShieldGroup.rotation.x = (Math.cos(Date.now() * 0.0008) * 0.12) - (mouseY * 0.5);
-
-            // Rotación orbital de la cadena de bloques
-            blockchainGroup.rotation.z += (rotSpeed * 1.2);
-            for (let i = 0; i < blockMeshes.length; i++) {
-                blockMeshes[i].rotation.x += 0.015;
-                blockMeshes[i].rotation.y += 0.025;
-            }
-
-            // Barrido del láser de escaneo
-            laserSweepMesh.position.y += (0.025 * laserDir);
-            if (laserSweepMesh.position.y > 1.9) laserDir = -1;
-            if (laserSweepMesh.position.y < -2.1) laserDir = 1;
-
-            // Transición suave de color de materiales
-            if (current3DColor && target3DColor) {
-                current3DColor.lerp(target3DColor, 0.05);
-                shieldWire.material.color = current3DColor;
-                lockBody.material.color = current3DColor;
-                chainOrbitLine.material.color = current3DColor;
-                for (let i = 0; i < blockMeshes.length; i++) {
-                    blockMeshes[i].material.color = current3DColor;
-                }
-            }
-
-            tesseractRenderer.render(tesseractScene, tesseractCamera);
-        }
-
         function set4DMode(mode) {
-            const ping = document.getElementById('tess-ping');
-            const dot = document.getElementById('tess-dot');
-            const hud = document.getElementById('tess-hud-txt');
-
-            if (mode === 'web') {
-                target3DColor = new THREE.Color(0x00D2FF);
-                if (laserSweepMesh) laserSweepMesh.material.color = new THREE.Color(0x00E599);
-                if (ping) ping.className = 'absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75';
-                if (dot) dot.className = 'relative inline-flex h-2 w-2 rounded-full bg-cyan-400';
-                if (hud) hud.innerText = currentPerimeterLang === 'en' ? '3D CYBER DEFENSE SHIELD • NIS2 PERIMETER ACTIVE' : 'ESCUDO 3D DE CIBERDEFENSA • BLINDAJE PERIMETRAL NIS2 ACTIVO';
-            } else {
-                target3DColor = new THREE.Color(0xA855F7);
-                if (laserSweepMesh) laserSweepMesh.material.color = new THREE.Color(0xD3B49A);
-                if (ping) ping.className = 'absolute inline-flex h-full w-full animate-ping rounded-full bg-purple-400 opacity-75';
-                if (dot) dot.className = 'relative inline-flex h-2 w-2 rounded-full bg-purple-400';
-                if (hud) hud.innerText = currentPerimeterLang === 'en' ? '3D CRYPTO VAULT & BLOCKCHAIN LEDGER NODES ACTIVE' : 'BÓVEDA CRIPTOGRÁFICA 3D & NODOS BLOCKCHAIN ACTIVOS';
-            }
+            // Dual-mode state helper
         }
-
         function trigger4DBoost() {
-            rotSpeed = 0.055;
-            targetSpeed = 0.008;
-            const stage = document.getElementById('hero-4d-stage');
-            if (stage) {
-                stage.style.opacity = '0.9';
-                setTimeout(() => {
-                    stage.style.opacity = '0.55';
-                }, 1300);
-            }
+            // Subtle pulse state helper
         }
-
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', init4DCore);
-        } else {
-            setTimeout(init4DCore, 100);
-        }
+    </script>
 
 
         
