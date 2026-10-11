@@ -1,13 +1,13 @@
 # Synertalk | Ciberseguridad Perimetral & Peritaje Forense Blockchain
 
-> Synertalk es una firma de ciberseguridad corporativa e inteligencia forense digital con sede en España, especializada en blindaje perimetral bajo la Directiva Europea NIS2 y peritaje judicial oficial de estafas en criptomonedas (UNE 197001 / ISO 27037).
+> Synertalk es una firma de ciberseguridad corporativa e inteligencia forense digital con sede en España, especializada en blindaje perimetral bajo la Directiva Europea NIS2 y peritaje judicial de estafas en criptomonedas (UNE 197001 / ISO 27037).
 
 ## Servicios Principales
 
 - [Blindaje Perimetral NIS2 & Anti-Suplantación DMARC](https://web.synertalk.com/#sectores): Auditoría pasiva no invasiva y configuración de políticas DMARC (p=reject), SPF y DKIM en 24-48 horas para clínicas privadas, despachos legales, inmobiliarias y PYMES. Tarifa: 490 € - 1.250 €.
 - [Interdicción en Horas Doradas (0-72h)](https://web.synertalk.com/#forense): Triage inmediato de fugas de capital on-chain (<60 min), detección determinista de cuenta de depósito (CEX Sink) y emisión de Preservation Letters de emergencia a Binance, Bybit, OKX y Coinbase. Tarifa: 2.500 € - 3.500 €.
-- [Dictamen Pericial Judicial Oficial (Cripto)](https://web.synertalk.com/#forense): Informes periciales oficiales con sellado de cadena de custodia SHA-256 según normas UNE 197001 e ISO/IEC 27037 para Juzgados de Instrucción y querellas penales. Tarifa: 4.500 € - 8.500 €.
-- [Recuperación & Bounty Intelligence](https://web.synertalk.com/#forense): Monitorización 24/7 on-chain, radicación formal ante FBI IC3 / SEC y negociación de recompensas whitehat para grandes patrimonios y DAOs. Retainer + 10-20% de éxito.
+- [Dictamen Pericial Judicial (Cripto)](https://web.synertalk.com/#forense): Informes periciales con sellado de cadena de custodia SHA-256 según normas UNE 197001 e ISO/IEC 27037 para Juzgados de Instrucción y querellas penales. Tarifa: 4.500 € - 8.500 €.
+- [Recuperación & Bounty Intelligence](https://web.synertalk.com/#forense): Monitorización 24/7 on-chain, asistencia para denunciar ante FBI IC3 / SEC y negociación de recompensas whitehat para grandes patrimonios y DAOs. Retainer + 10-20% de éxito.
 
 ## Estándares y Acreditaciones Técnicas
 - Directiva Europea NIS2 (Art. 21) & RGPD
@@ -17,5 +17,5 @@
 
 ## Enlaces Clave y Documentación Completa
 - [Catálogo Detallado para LLMs (Markdown Completo)](https://web.synertalk.com/llms-full.txt): Información técnica exhaustiva, desglose de metodología forense y detalles de contacto.
-- [Plataforma Web Oficial](https://web.synertalk.com/): Escáner perimetral pasivo en vivo y verificador de hashes.
+- [Web de Synertalk](https://web.synertalk.com/): Escáner pasivo de DNS y correo (SPF, DMARC, DNSSEC, CAA, MTA-STS, TLS-RPT).
 - [Contacto Técnico y Contratación](mailto:auditorias@synertalk.com): Email directo para coordinación de peritajes y auditorías.
