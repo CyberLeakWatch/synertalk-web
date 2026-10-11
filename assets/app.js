@@ -145,7 +145,9 @@
                 footContactLbl: "Contacto:",
                 footSvc1: "Configuración DMARC y NIS2",
                 footSvc2: "Peritaje de estafas cripto",
-                footSvc3: "Para despachos de abogados"
+                footSvc3: "Para despachos de abogados",
+                footLegal: "Aviso legal",
+                footPrivacy: "Privacidad y cookies"
             },
             en: {
                 title: "Synertalk | DMARC/NIS2 Email Protection & Crypto Forensics",
@@ -278,7 +280,9 @@
                 footContactLbl: "Contact:",
                 footSvc1: "DMARC & NIS2 setup (Spanish)",
                 footSvc2: "Crypto fraud forensics (Spanish)",
-                footSvc3: "For law firms (Spanish)"
+                footSvc3: "For law firms (Spanish)",
+                footLegal: "Legal notice (Spanish)",
+                footPrivacy: "Privacy & cookies (Spanish)"
             }
         };
 
@@ -440,6 +444,8 @@
             setTxt('foot-svc1', d.footSvc1);
             setTxt('foot-svc2', d.footSvc2);
             setTxt('foot-svc3', d.footSvc3);
+            setTxt('foot-legal', d.footLegal);
+            setTxt('foot-privacy', d.footPrivacy);
 
             // Refresh currently displayed sector in the selected language
             if (typeof selectSector === 'function') {
