@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- Source of assets/og.png (1200x630). Render it with any headless browser at that viewport size. -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../assets/tailwind.css">
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; }
+  body {
+    background-color: #040711;
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(0, 210, 255, 0.22) 0%, transparent 45%),
+      radial-gradient(circle at 95% 100%, rgba(168, 85, 247, 0.20) 0%, transparent 45%),
+      linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+  }
+</style>
+</head>
+<body class="font-sans text-white">
+  <div class="flex h-full flex-col justify-between p-16">
+    <div class="flex items-center gap-4">
+      <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 via-blue-600 to-indigo-700 font-mono text-2xl font-black text-slate-950">S</div>
+      <div>
+        <div class="font-mono text-2xl font-extrabold tracking-tight">SYNERTALK<span class="text-cyan-400">.</span></div>
+        <div class="font-mono text-xs uppercase tracking-widest text-slate-400">Cyber Defense &amp; Forensics</div>
+      </div>
+    </div>
+    <div>
+      <h1 class="font-serif text-7xl leading-[1.05]">Tu dominio puede ser suplantado.<br><span class="italic text-warmGold">Tu evidencia debe sostenerse en juicio.</span></h1>
+    </div>
+    <div class="flex items-center gap-4 font-mono text-lg">
+      <span class="rounded-xl border border-cyan-500/40 bg-cyan-500/10 px-4 py-2 text-cyan-300">DMARC · SPF · NIS2</span>
+      <span class="rounded-xl border border-purple-500/40 bg-purple-500/10 px-4 py-2 text-purple-300">Peritaje cripto · UNE 197001</span>
+      <span class="ml-auto text-slate-400">web.synertalk.com</span>
+    </div>
+  </div>
+</body>
+</html>
