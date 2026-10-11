@@ -17,19 +17,6 @@ export default {
       });
     }
 
-    // If client asks for /.well-known/api-catalog, ensure application/linkset+json
-    if (url.pathname === "/.well-known/api-catalog") {
-      const catRes = await env.ASSETS.fetch(new URL("/.well-known/api-catalog", request.url));
-      const catText = await catRes.text();
-      return new Response(catText, {
-        status: 200,
-        headers: {
-          "content-type": "application/linkset+json; charset=utf-8",
-          "access-control-allow-origin": "*"
-        }
-      });
-    }
-
     return env.ASSETS.fetch(request);
   }
 };
