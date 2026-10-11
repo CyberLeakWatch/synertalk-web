@@ -1,12 +1,16 @@
 {
   "name": "synertalk-web-tailwind",
   "private": true,
-  "description": "Compila assets/tailwind.css a partir de las clases usadas en index.html",
+  "description": "Compila assets/tailwind.css (con las fuentes alojadas en assets/fonts) a partir de las clases usadas en index.html",
   "scripts": {
-    "build": "tailwindcss -c tailwind.config.js -i input.css -o ../../assets/tailwind.css --minify",
+    "fonts": "node fonts.mjs",
+    "build": "node fonts.mjs && tailwindcss -c tailwind.config.js -i input.css -o ../../assets/tailwind.css --minify",
     "watch": "tailwindcss -c tailwind.config.js -i input.css -o ../../assets/tailwind.css --watch"
   },
   "devDependencies": {
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@fontsource-variable/manrope": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
     "tailwindcss": "3.4.17"
   }
 }

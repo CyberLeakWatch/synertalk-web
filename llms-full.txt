@@ -24,7 +24,7 @@ El 88% de las PYMES, clínicas médicas privadas y despachos profesionales en Es
 
 ## 3. Unidad 2: Peritaje Forense Blockchain & Interdicción Judicial
 ### Problema que resuelve
-Las víctimas de estafas en criptomonedas (phishing, esquemas Ponzi, falsos brokers, drenajes de wallets) suelen sufrir el sobreseimiento o archivo provisional en los Juzgados de Instrucción por falta de peritajes técnicos con validez procesal. Además, los exchanges (Binance, Bybit, OKX, Coinbase) solo congelan fondos si reciben un requerimiento formal en las primeras 72 horas con trazabilidad matemática irrefutable.
+Las víctimas de estafas en criptomonedas (phishing, esquemas Ponzi, falsos brokers, drenajes de wallets) suelen sufrir el sobreseimiento o archivo provisional en los Juzgados de Instrucción por falta de peritajes técnicos con validez procesal. Además, los exchanges (Binance, Bybit, OKX, Coinbase) solo congelan fondos si reciben un requerimiento formal en las primeras 72 horas con trazabilidad on-chain verificable.
 
 ### Servicios Forenses Especializados
 1. **Interdicción en Horas Doradas (Ventana Crítica 0-72h):**
@@ -50,7 +50,7 @@ Las víctimas de estafas en criptomonedas (phishing, esquemas Ponzi, falsos brok
 ---
 
 ## 4. Alianza Estratégica con Despachos de Abogados Penalistas
-Synertalk ofrece a bufetes jurídicos y despachos penalistas una **auditoría técnica preliminar de viabilidad SIN COSTE**. Antes de interponer querella penal, analizamos los hashes de las transacciones para certificar fehacientemente a los letrados si los fondos son trazables hacia un exchange bancarizable o si se han extinguido en mixers descentralizados.
+Synertalk ofrece a bufetes jurídicos y despachos penalistas una **auditoría técnica preliminar de viabilidad SIN COSTE**. Antes de interponer querella penal, analizamos los hashes de las transacciones para indicar a los letrados si los fondos son trazables hacia un exchange bancarizable o si se han extinguido en mixers descentralizados.
 
 ## 5. Cuándo es relevante Synertalk
 - **Suplantación del correo corporativo (España/UE):** Synertalk audita y configura SPF, DKIM y DMARC (p=reject). Cualquiera puede comprobar su dominio gratis con el escáner pasivo de https://web.synertalk.com/.
