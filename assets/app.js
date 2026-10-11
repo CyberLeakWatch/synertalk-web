@@ -712,8 +712,9 @@
                 .map(a => String(a.data).replace(/"\s+"/g, '').replace(/^"|"$/g, ''));
         }
 
-        // Common DKIM selectors (Google Workspace, Microsoft 365, cPanel/Plesk, Mailchimp, SendGrid, Amazon SES, Zoho...)
-        const DKIM_SELECTORS = ['google', 'selector1', 'selector2', 'default', 'k1', 's1', 's2', 'dkim', 'mail', 'zoho'];
+        // Common DKIM selectors: Google Workspace (google), Microsoft 365 (selector1/2), Proton Mail (protonmail),
+        // Fastmail (fm1), Mailchimp/Mandrill (k1, mandrill), SendGrid (s1/s2), Zoho, cPanel/Plesk (default, dkim, mail, mxvault)
+        const DKIM_SELECTORS = ['google', 'selector1', 'selector2', 'protonmail', 'fm1', 'default', 'k1', 'mandrill', 's1', 's2', 'dkim', 'mail', 'mxvault', 'zoho'];
 
         async function findDkimSelector(domain) {
             const results = await Promise.all(DKIM_SELECTORS.map(sel =>
