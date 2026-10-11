@@ -73,7 +73,7 @@
                 fC1Btn: "Activar Interdicción",
                 fC2Tag: "Especial Bufetes Penalistas",
                 fC2Title: "Dictamen Pericial Judicial",
-                fC2Desc: "El informe pericial definitivo que impide el archivo judicial en los Juzgados de Instrucción y fundamenta la solicitud de medidas cautelares y comisiones rogatorias.",
+                fC2Desc: "Informe pericial técnico para los Juzgados de Instrucción que sirve de soporte a la solicitud de medidas cautelares y comisiones rogatorias.",
                 fC2F1: "Cadena de custodia sellada con Hash SHA-256",
                 fC2F2: "Diagrama topológico de mulas y desvíos",
                 fC2F3: "Identificación de VASPs / CEXs responsables",
@@ -82,7 +82,7 @@
                 fC2Btn: "Encargar Dictamen Pericial",
                 fC3Badge: "CASOS > 100.000 € / DEFI HACKS",
                 fC3Title: "Recuperación & Bounty Intelligence",
-                fC3Desc: "Para fraudes a grandes patrimonios, DAOs o fondos de inversión. Monitorización 24/7 con centinelas dedicados y radicación ante agencias federales internacionales.",
+                fC3Desc: "Para fraudes a grandes patrimonios, DAOs o fondos de inversión. Monitorización 24/7 con centinelas dedicados y asistencia para denunciar ante agencias internacionales.",
                 fC3F1: "Asistencia para denunciar ante FBI IC3 / SEC",
                 fC3F2: "Monitorización 24/7 en Contabo Sentinel",
                 fC3F3: "Negociación on-chain whitehat bounty",
@@ -128,7 +128,7 @@
                 faqQ2: "¿Cuánto cuesta el servicio completo de blindaje?",
                 faqA2: "La auditoría previa de 1 página es 100% gratuita. El paquete <strong>Blindaje Perimetral Express tiene una tarifa plana única de 490 €</strong> (entrega en 24-48h). Para empresas con necesidades complejas NIS2 disponemos del plan Integral por 1.250 €.",
                 faqQ3: "¿Por qué las empresas matrices nos exigen DMARC y NIS2?",
-                faqA3: "La Directiva Europea NIS2 obliga a las grandes entidades a auditar la seguridad de toda su cadena de proveedores. Si una PYME carece de política DMARC, puede ser utilizada para estafar a la empresa matriz, perdiendo de inmediato la homologación de proveedor.",
+                faqA3: "La Directiva Europea NIS2 obliga a las grandes entidades a auditar la seguridad de toda su cadena de proveedores. Si una PYME carece de política DMARC, puede ser utilizada para estafar a la empresa matriz, y poner en riesgo su continuidad como proveedor.",
 
                 // Footer
                 footH2: "Comprueba el estado de tu negocio hoy",
@@ -204,7 +204,7 @@
                 fC1Btn: "Activate Interdiction",
                 fC2Tag: "Recommended for Litigation Law Firms",
                 fC2Title: "Court-Ready Expert Witness Report",
-                fC2Desc: "The definitive technical filing judges and prosecutors require to prevent case dismissals and issue international freezing orders.",
+                fC2Desc: "A technical expert report for investigating courts to support requests for precautionary measures and international freezing orders.",
                 fC2F1: "Chain of custody sealed with SHA-256 hash",
                 fC2F2: "Topological flow map of money mules and layering",
                 fC2F3: "Identified responsible VASPs / CEX deposit accounts",
@@ -213,7 +213,7 @@
                 fC2Btn: "Commission Expert Witness Report",
                 fC3Badge: "CASES > $100,000 / DEFI HACKS",
                 fC3Title: "Asset Recovery & Bounty Intelligence",
-                fC3Desc: "Advanced forensic interdiction for HNWIs, DAOs and investment funds. 24/7 dedicated Sentinel monitoring and international federal filings.",
+                fC3Desc: "Advanced forensic interdiction for HNWIs, DAOs and investment funds. 24/7 dedicated Sentinel monitoring and assistance filing reports with international agencies.",
                 fC3F1: "Assistance filing reports with FBI IC3 / SEC TCR",
                 fC3F2: "24/7 autonomous monitoring on Contabo VPS",
                 fC3F3: "On-chain whitehat bounty negotiation",
@@ -259,7 +259,7 @@
                 faqQ2: "How much does the complete perimeter shielding service cost?",
                 faqA2: "The initial 1-page audit is 100% free. The <strong>Express Perimeter Shield has a fixed flat fee of €490</strong> (24-48h turnaround). For organizations with comprehensive NIS2 requirements, our Full Scope plan is €1,250.",
                 faqQ3: "Why are enterprise clients requiring DMARC and NIS2 compliance?",
-                faqA3: "The European NIS2 Directive mandates that enterprises audit security across their entire supply chain. If an SMB lacks DMARC authentication, it can be leveraged for vendor invoice fraud against prime contractors, causing immediate loss of vendor status.",
+                faqA3: "The European NIS2 Directive mandates that enterprises audit security across their entire supply chain. If an SMB lacks DMARC authentication, it can be leveraged for vendor invoice fraud against prime contractors, putting its vendor status at risk.",
 
                 // Footer
                 footH2: "Check your business security posture today",

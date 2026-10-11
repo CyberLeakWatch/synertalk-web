@@ -21,7 +21,7 @@
       "name": "crypto-forensics-interdiction",
       "version": "1.0.0",
       "type": "skill",
-      "description": "Peritaje judicial oficial y preservación de fondos en Binance/OKX",
+      "description": "Peritaje judicial y preservación de fondos en Binance/OKX",
       "url": "https://web.synertalk.com/.well-known/agent-skills/crypto-forensics/SKILL.md",
       "digest": "sha256:43e12dadba317c08bb1ecaa8b4db2ff40c97a0193c8ddb2a7d35b46ed167e27b",
       "sha256": "43e12dadba317c08bb1ecaa8b4db2ff40c97a0193c8ddb2a7d35b46ed167e27b",
