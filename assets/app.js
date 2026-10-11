@@ -671,7 +671,6 @@
 
         // Live Scanner State & Logic (real, passive DNS checks via DNS-over-HTTPS)
         let lastScanDomain = "";
-        let lastScanClientId = null;
         let lastScanScore = null;
         const CONTACT_EMAIL = 'auditorias@synertalk.com';
 
@@ -881,7 +880,6 @@
             setTerminalHeader(en ? 'PASSIVE AUDIT IN PROGRESS' : 'AUDITORÍA PASIVA EN CURSO',
                 en ? 'Querying public DNS records (DNS-over-HTTPS)...' : 'Consultando registros DNS públicos (DNS-over-HTTPS)...');
             lastScanDomain = domain;
-            lastScanClientId = null;
             btn.disabled = true;
             btn.innerHTML = `<span class="h-4 w-4 rounded-full border-2 border-slate-950 border-t-transparent animate-spin inline-block mr-1"></span> ${en ? 'Scanning...' : 'Escaneando...'}`;
 
@@ -902,19 +900,6 @@
                 return;
             }
             pct.innerText = '100%';
-
-            // Optional: register the lead in the Synertalk backend when it is deployed alongside this page.
-            try {
-                const res = await fetch('/api/audit', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ domain: domain, sector: 'Lead Web Synertalk', passive_score: result.score })
-                });
-                if (res.ok && (res.headers.get('content-type') || '').includes('application/json')) {
-                    const data = await res.json();
-                    if (data.client_id) lastScanClientId = data.client_id;
-                }
-            } catch (e) { /* backend not available: the scan result stands on its own */ }
 
             const score = result.score;
             lastScanScore = score;
@@ -950,37 +935,12 @@
             return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         }
 
-        async function submitLeadUnlock() {
+        function submitLeadUnlock() {
             const emailInput = document.getElementById('res-email');
             const email = emailInput ? emailInput.value.trim() : '';
             const domain = lastScanDomain;
             const en = currentPerimeterLang === 'en';
             if (!email || !domain || (emailInput && !emailInput.checkValidity())) return;
-
-            const unlockBtn = document.getElementById('unlock-btn');
-            if (unlockBtn) {
-                unlockBtn.disabled = true;
-                unlockBtn.innerHTML = `<span class="h-3.5 w-3.5 rounded-full border-2 border-slate-950 border-t-transparent animate-spin inline-block mr-1"></span> ${en ? 'Sending...' : 'Enviando...'}`;
-            }
-
-            // Sync with the CRM backend only when the scan was registered there
-            let registered = false;
-            if (lastScanClientId) {
-                try {
-                    const res = await fetch(`/api/clients/${encodeURIComponent(lastScanClientId)}/status`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            status: 'CONTACTADO',
-                            contact_email: email,
-                            notes: 'Lead captado automáticamente desde la landing Synertalk 2026'
-                        })
-                    });
-                    registered = res.ok;
-                } catch (e) {
-                    console.error("Error al actualizar estado en CRM:", e);
-                }
-            }
 
             const mailto = buildMailto(
                 en ? `Infographic request: ${domain}` : `Solicitud de infografía: ${domain}`,
@@ -991,12 +951,10 @@
             const safeEmail = escapeHtml(email);
             const container = document.getElementById('lead-unlock-container');
 
-            const message = registered
-                ? (en ? `We have received your request. We will send the infographic for <strong class="text-cyan-400">${safeDomain}</strong> to <span class="text-white font-mono">${safeEmail}</span> within 48 hours.`
-                      : `Hemos recibido tu solicitud. Enviaremos la infografía de <strong class="text-cyan-400">${safeDomain}</strong> a <span class="text-white font-mono">${safeEmail}</span> en un plazo de 48 horas.`)
-                : (en ? `To receive the infographic for <strong class="text-cyan-400">${safeDomain}</strong>, send us the pre-filled email below.`
-                      : `Para recibir la infografía de <strong class="text-cyan-400">${safeDomain}</strong>, envíanos el email que hemos preparado.`);
-            const button = registered ? '' : `
+            const message = en
+                ? `To receive the infographic for <strong class="text-cyan-400">${safeDomain}</strong>, send us the pre-filled email below.`
+                : `Para recibir la infografía de <strong class="text-cyan-400">${safeDomain}</strong>, envíanos el email que hemos preparado.`;
+            const button = `
                     <div class="mt-5 flex flex-wrap items-center justify-center gap-3">
                         <a href="${escapeHtml(mailto)}" class="inline-flex items-center gap-2 rounded-xl bg-emerald-400 px-5 py-3 text-xs font-black text-slate-950 hover:bg-emerald-300 transition-all shadow-lg shadow-emerald-500/25 active:scale-95">
                             <span>${en ? 'Send request by email' : 'Enviar solicitud por email'}</span>
@@ -1005,7 +963,7 @@
 
             container.innerHTML = `
                 <div class="rounded-xl bg-emerald-950/40 border border-emerald-500/30 p-6 text-center shadow-2xl">
-                    <h4 class="text-base font-bold text-white">${registered ? (en ? 'Request received' : 'Solicitud recibida') : (en ? 'One last step' : 'Último paso')}</h4>
+                    <h4 class="text-base font-bold text-white">${en ? 'One last step' : 'Último paso'}</h4>
                     <p class="text-xs text-slate-300 mt-1 max-w-md mx-auto">${message}</p>${button}
                 </div>
             `;
