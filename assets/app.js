@@ -1,14 +1,21 @@
         // Global State & Language Initialization (Hoisted at Top)
-        const urlParamsLand = new URLSearchParams(window.location.search);
-        const qLangLand = urlParamsLand.get('lang');
-        const savedLangLand = (typeof localStorage !== 'undefined' && localStorage.getItem) ? localStorage.getItem('synertalk_perimeter_lang') : null;
-        let currentPerimeterLang = (qLangLand === 'en' || (!qLangLand && savedLangLand === 'en')) ? 'en' : 'es';
+        // The language comes from the URL: / is Spanish, /en/ is English (prerendered by tools/tailwind/build-en.mjs)
+        const LANG_PATHS = { es: '/', en: '/en/' };
+        let currentPerimeterLang = /^\/en(\/|$)/.test(window.location.pathname) ? 'en' : 'es';
+        // Old ?lang=en links keep working
+        if (currentPerimeterLang === 'es' && new URLSearchParams(window.location.search).get('lang') === 'en') {
+            window.location.replace(LANG_PATHS.en + window.location.hash);
+        }
+
+        function goToLang(lang) {
+            if (lang !== currentPerimeterLang && LANG_PATHS[lang]) window.location.href = LANG_PATHS[lang] + window.location.hash;
+        }
         let currentHeroMode = 'web';
 
         // Comprehensive Bilingual Language Logic (ES / EN) for Both Services
         const perimeterDict = {
             es: {
-                title: "Synertalk | Ciberseguridad Perimetral & Peritaje Forense Blockchain",
+                title: "Synertalk | Protección DMARC/NIS2 y Peritaje Informático Cripto",
                 cta: "Auditoría Gratis",
                 badge: "PRIMERA RESPUESTA: < 2H | NORMATIVAS: UNE 197001 & ISO 27037",
                 h1: 'Tu dominio corporativo puede ser suplantado ahora mismo.<br><span class="italic text-warmGold">Tu evidencia pericial debe sostenerse en juicio.</span>',
@@ -135,10 +142,13 @@
                 footBtnTxt: "Auditar Mi Empresa Ahora",
                 footCopy: "© 2026 Synertalk Cyber Defense Unit",
                 footArch: "Auditoría pasiva y no invasiva",
-                footContactLbl: "Contacto:"
+                footContactLbl: "Contacto:",
+                footSvc1: "Configuración DMARC y NIS2",
+                footSvc2: "Peritaje de estafas cripto",
+                footSvc3: "Para despachos de abogados"
             },
             en: {
-                title: "Synertalk | Perimeter Cybersecurity & Blockchain Forensic Intelligence",
+                title: "Synertalk | DMARC/NIS2 Email Protection & Crypto Forensics",
                 cta: "Free Audit",
                 badge: "FIRST RESPONSE: < 2H | STANDARDS: ISO/IEC 27037 & UNE 197001",
                 h1: 'Your corporate domain can be spoofed right now.<br><span class="italic text-warmGold">Your forensic evidence must stand in court.</span>',
@@ -265,7 +275,10 @@
                 footBtnTxt: "Audit My Organization Now",
                 footCopy: "© 2026 Synertalk Cyber Defense Unit",
                 footArch: "Passive, non-invasive auditing",
-                footContactLbl: "Contact:"
+                footContactLbl: "Contact:",
+                footSvc1: "DMARC & NIS2 setup (Spanish)",
+                footSvc2: "Crypto fraud forensics (Spanish)",
+                footSvc3: "For law firms (Spanish)"
             }
         };
 
@@ -273,7 +286,6 @@
 
         function setPerimeterLang(lang) {
             currentPerimeterLang = lang;
-            localStorage.setItem('synertalk_perimeter_lang', lang);
             const d = perimeterDict[lang];
             if (!d) return;
 
@@ -425,6 +437,9 @@
             setTxt('foot-copy', d.footCopy);
             setTxt('foot-arch', d.footArch);
             setTxt('foot-contact-lbl', d.footContactLbl);
+            setTxt('foot-svc1', d.footSvc1);
+            setTxt('foot-svc2', d.footSvc2);
+            setTxt('foot-svc3', d.footSvc3);
 
             // Refresh currently displayed sector in the selected language
             if (typeof selectSector === 'function') {
@@ -1170,7 +1185,7 @@
         }
 
         // Event wiring (replaces inline on* handlers so the CSP can forbid inline scripts)
-        document.querySelectorAll('[data-lang]').forEach(btn => btn.addEventListener('click', () => setPerimeterLang(btn.dataset.lang)));
+        document.querySelectorAll('[data-lang]').forEach(btn => btn.addEventListener('click', () => goToLang(btn.dataset.lang)));
         document.querySelectorAll('[data-hero-mode]').forEach(btn => btn.addEventListener('click', () => switchHeroMode(btn.dataset.heroMode)));
         document.querySelectorAll('.sector-tab-btn[data-sector]').forEach(btn => btn.addEventListener('click', () => selectSector(btn.dataset.sector, btn)));
         document.getElementById('hero-scan-form').addEventListener('submit', e => { e.preventDefault(); handleHeroSubmit(); });
