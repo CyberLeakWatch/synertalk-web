@@ -10,7 +10,7 @@
             es: {
                 title: "Synertalk | Ciberseguridad Perimetral & Peritaje Forense Blockchain",
                 cta: "Auditoría Gratis",
-                badge: "● PRIMERA RESPUESTA: &lt; 2H | NORMATIVAS: UNE 197001 &amp; ISO 27037",
+                badge: "PRIMERA RESPUESTA: < 2H | NORMATIVAS: UNE 197001 & ISO 27037",
                 h1: 'Tu dominio corporativo puede ser suplantado ahora mismo.<br><span class="italic text-warmGold">Tu evidencia pericial debe sostenerse en juicio.</span>',
                 desc: 'Muchos despachos y empresas carecen de DMARC <code class="text-cyan-400 font-mono text-sm px-1.5 py-0.5 rounded bg-cyan-950/60 border border-cyan-500/30">p=reject</code>, exponiéndose a facturas falsas y sanciones NIS2. En Synertalk emitimos <strong>Dictámenes Periciales con sellado SHA-256</strong> e <strong>interdicción de fondos cripto en horas doradas (0-72h)</strong>.',
                 tabWeb: "🛡️ Blindaje Perimetral NIS2",
@@ -39,9 +39,8 @@
 
                 // Split Slider
                 compTag: "Demostración Visual de Transformación",
-                compH2: "Arrastra para ver el cambio real",
+                compH2: "Antes y después",
                 compP: "Compara la web típica de un negocio (fricción, lenta y desprotegida) frente a la dirección editorial y blindaje perimetral de Synertalk.",
-                compHint: "Arrastra el control o usa las teclas ◄ / ► del teclado para comparar",
                 compBBadge: "EJEMPLO ILUSTRATIVO · ANTES",
                 compBScore: "SCORE: 37/100 | CARGA: 4.2s",
                 compBCat: "Fricción & Fuga de Clientes",
@@ -141,7 +140,7 @@
             en: {
                 title: "Synertalk | Perimeter Cybersecurity & Blockchain Forensic Intelligence",
                 cta: "Free Audit",
-                badge: "● FIRST RESPONSE: &lt; 2H | STANDARDS: ISO/IEC 27037 &amp; UNE 197001",
+                badge: "FIRST RESPONSE: < 2H | STANDARDS: ISO/IEC 27037 & UNE 197001",
                 h1: 'Your corporate domain can be spoofed right now.<br><span class="italic text-warmGold">Your forensic evidence must stand in court.</span>',
                 desc: 'Many organizations lack DMARC <code class="text-cyan-400 font-mono text-sm px-1.5 py-0.5 rounded bg-cyan-950/60 border border-cyan-500/30">p=reject</code>, exposing themselves to invoice fraud and NIS2 penalties. At Synertalk we produce <strong>Expert Witness Reports with SHA-256 integrity seals</strong> and <strong>golden hours crypto asset freezing (0-72h)</strong>.',
                 tabWeb: "🛡️ NIS2 Perimeter Defense",
@@ -170,9 +169,8 @@
 
                 // Split Slider
                 compTag: "Visual Transformation Showcase",
-                compH2: "Drag to see the real change",
+                compH2: "Before and after",
                 compP: "Compare a typical business website (friction, slow and unprotected) against Synertalk editorial direction and perimeter shielding.",
-                compHint: "Drag the slider or use ◄ / ► arrow keys to compare",
                 compBBadge: "ILLUSTRATIVE EXAMPLE · BEFORE",
                 compBScore: "SCORE: 37/100 | LOAD: 4.2s",
                 compBCat: "Friction & Customer Drop-off",
@@ -332,7 +330,6 @@
             setTxt('comp-tag', d.compTag);
             setTxt('comp-h2', d.compH2);
             setTxt('comp-p', d.compP);
-            setTxt('comp-hint', d.compHint);
             setTxt('comp-b-badge', d.compBBadge);
             setTxt('comp-b-score', d.compBScore);
             setTxt('comp-b-cat', d.compBCat);
@@ -445,48 +442,6 @@
                 card.style.setProperty('--mouse-x', `${x}px`);
                 card.style.setProperty('--mouse-y', `${y}px`);
             });
-        });
-
-        // Split Slider Dragging & Keyboard Navigation Logic (WCAG Compliant)
-        const splitBox = document.getElementById('split-box');
-        let isDragging = false;
-        let currentSplitPos = 50;
-
-        function applySplit(pos) {
-            currentSplitPos = Math.max(5, Math.min(95, Math.round(pos)));
-            splitBox.style.setProperty('--split-pos', `${currentSplitPos}%`);
-            splitBox.setAttribute('aria-valuenow', currentSplitPos);
-        }
-
-        function updateSplitFromEvent(clientX) {
-            const rect = splitBox.getBoundingClientRect();
-            const pos = ((clientX - rect.left) / rect.width) * 100;
-            applySplit(pos);
-        }
-
-        splitBox.addEventListener('mousedown', e => { isDragging = true; updateSplitFromEvent(e.clientX); });
-        window.addEventListener('mouseup', () => { isDragging = false; });
-        window.addEventListener('mousemove', e => { if (isDragging) updateSplitFromEvent(e.clientX); });
-
-        splitBox.addEventListener('touchstart', e => { isDragging = true; updateSplitFromEvent(e.touches[0].clientX); }, { passive: true });
-        window.addEventListener('touchend', () => { isDragging = false; });
-        window.addEventListener('touchmove', e => { if (isDragging) updateSplitFromEvent(e.touches[0].clientX); }, { passive: true });
-
-        // Keyboard accessibility for slider
-        splitBox.addEventListener('keydown', e => {
-            if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
-                e.preventDefault();
-                applySplit(currentSplitPos - 5);
-            } else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
-                e.preventDefault();
-                applySplit(currentSplitPos + 5);
-            } else if (e.key === 'Home') {
-                e.preventDefault();
-                applySplit(5);
-            } else if (e.key === 'End') {
-                e.preventDefault();
-                applySplit(95);
-            }
         });
 
         // Bilingual Sector Tabs Data (ES / EN)
@@ -679,7 +634,7 @@
                     <div class="lg:w-96 rounded-2xl bg-slate-950/80 p-7 border border-white/10 shadow-inner">
                         <h4 class="font-mono text-xs uppercase tracking-wider text-warmGold font-bold">${lblPreserve}</h4>
                         <p class="mt-1 text-xs text-slate-400">${lblUntouched}</p>
-                        <ul class="mt-4 space-y-2.5 text-xs text-slate-300 font-mono">
+                        <ul class="mt-4 space-y-2.5 text-sm text-slate-300">
                             ${s.preserve.map(p => `<li class="flex items-center gap-2"><span class="text-warmGold font-bold">✓</span> ${p}</li>`).join('')}
                         </ul>
 
