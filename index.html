@@ -4,36 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Synertalk | Auditoría Perimetral y Modernización Web para Negocios</title>
-    <meta name="description" content="Descubre dónde está perdiendo clientes y seguridad tu negocio. Auditoría gratuita en tiempo real con inteligencia Google DeepMind Gemini 3.8 Flash.">
+    <meta name="description" content="Descubre dónde está perdiendo clientes y seguridad tu negocio. Auditoría gratuita y pasiva de DMARC, SPF y DNS en tiempo real.">
     
     <!-- Google Fonts: Instrument Serif, Manrope, JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        serif: ['"Instrument Serif"', 'serif'],
-                        sans: ['Manrope', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace'],
-                    },
-                    colors: {
-                        bgVoid: '#040711',
-                        cardSurface: '#0B1120',
-                        neonCyan: '#00D2FF',
-                        neonGreen: '#00E599',
-                        neonRed: '#FF3366',
-                        warmGold: '#D3B49A',
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Tailwind CSS compilado (tools/tailwind: npm run build) -->
+    <link rel="stylesheet" href="/assets/tailwind.css">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
     <style>
         :root {
@@ -186,14 +166,13 @@
       "name": "Synertalk | Ciberseguridad Perimetral & Peritaje Forense Blockchain",
       "image": "https://web.synertalk.com/favicon.svg",
       "url": "https://web.synertalk.com/",
-      "telephone": "+34-900-000-000",
       "email": "auditorias@synertalk.com",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "ES"
       },
       "areaServed": ["ES", "EU"],
-      "description": "Firma pericial de ciberseguridad corporativa e inteligencia forense blockchain. Especialistas en auditoría de perímetro NIS2 (DMARC p=reject) y peritaje judicial oficial con sellado SHA-256 (UNE 197001 / ISO 27037).",
+      "description": "Firma pericial de ciberseguridad corporativa e inteligencia forense blockchain. Especialistas en auditoría de perímetro NIS2 (DMARC p=reject) y peritaje judicial con sellado SHA-256 (UNE 197001 / ISO 27037).",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Servicios Periciales y de Ciberdefensa",
@@ -222,7 +201,7 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Dictamen Pericial Judicial Oficial de Estafas Cripto",
+              "name": "Dictamen Pericial Judicial de Estafas Cripto",
               "description": "Dictamen pericial con cadena de custodia SHA-256 conforme a normas UNE 197001 e ISO/IEC 27037."
             },
             "price": "4500.00",
@@ -249,8 +228,8 @@
                     <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
                     <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
                 </span>
-                <span id="ticker-engine-lbl" class="text-slate-300 font-bold">GEMINI 3.8 FLASH CYBER ENGINE:</span>
-                <span id="ticker-engine-mode" class="text-slate-500">Sentinel Mode (Port 8000 Verified)</span>
+                <span id="ticker-engine-lbl" class="text-slate-300 font-bold">MOTOR DE AUDITORÍA PASIVA:</span>
+                <span id="ticker-engine-mode" class="text-slate-500">DNS · SPF · DMARC en vivo</span>
             </span>
 
             <div class="mx-auto sm:mx-0 flex items-center gap-4">
@@ -358,7 +337,7 @@
 
             <!-- Subtitle -->
             <p id="hero-p-desc" class="mx-auto mt-7 max-w-3xl text-base text-slate-300 sm:text-xl font-light leading-relaxed">
-                El 84% de despachos y empresas carecen de DMARC <code class="text-cyan-400 font-mono text-sm px-1.5 py-0.5 rounded bg-cyan-950/60 border border-cyan-500/30">p=reject</code>, exponiéndose a facturas falsas y sanciones NIS2. En Synertalk emitimos <strong>Dictámenes Periciales Oficiales con sellado SHA-256</strong> e <strong>interdicción de fondos cripto en horas doradas (0-72h)</strong>.
+                El 84% de despachos y empresas carecen de DMARC <code class="text-cyan-400 font-mono text-sm px-1.5 py-0.5 rounded bg-cyan-950/60 border border-cyan-500/30">p=reject</code>, exponiéndose a facturas falsas y sanciones NIS2. En Synertalk emitimos <strong>Dictámenes Periciales con sellado SHA-256</strong> e <strong>interdicción de fondos cripto en horas doradas (0-72h)</strong>.
             </p>
 
             <!-- COCKPIT: LIVE SCANNER INPUT -->
@@ -417,8 +396,8 @@
                                 </svg>
                             </div>
                             <div>
-                                <div class="font-bold text-white text-xs">MOTOR GEMINI 3.8 FLASH ACTIVO</div>
-                                <div class="text-[10px] text-slate-400">Inspeccionando registros DNS autoritativos & TLS...</div>
+                                <div id="scan-term-title" class="font-bold text-white text-xs">AUDITORÍA PASIVA EN CURSO</div>
+                                <div id="scan-term-sub" class="text-[10px] text-slate-400">Consultando registros DNS públicos (DNS-over-HTTPS)...</div>
                             </div>
                         </div>
                         <span id="scan-pct" class="text-sm font-bold text-cyan-400">0%</span>
@@ -433,9 +412,9 @@
                 <div id="scan-result-card" class="mt-6 hidden text-left spotlight-card p-7 shadow-2xl border-cyan-500/40">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-5 border-b border-white/10 pb-5">
                         <div>
-                            <div class="text-[10px] font-mono font-bold uppercase tracking-widest text-cyan-400">Diagnóstico Perimetral Completado</div>
+                            <div class="text-[10px] font-mono font-bold uppercase tracking-widest text-cyan-400">Diagnóstico Pasivo DNS / Correo</div>
                             <h3 id="res-domain" class="text-2xl font-black text-white mt-1">empresa.com</h3>
-                            <div class="text-xs text-slate-400 mt-0.5">Certificado emitido bajo directiva europea NIS2 (Art. 21)</div>
+                            <div class="text-xs text-slate-400 mt-0.5">Resultado orientativo basado en registros DNS públicos</div>
                         </div>
                         
                         <!-- Visual Circular Gauge Dial -->
@@ -445,49 +424,26 @@
                                     <circle cx="50" cy="50" r="40" stroke="rgba(255,255,255,0.08)" stroke-width="8" fill="none"/>
                                     <circle id="gauge-circle-elem" class="gauge-circle" cx="50" cy="50" r="40" stroke="#FF3366" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="158" stroke-linecap="round" fill="none"/>
                                 </svg>
-                                <span id="res-score-num" class="absolute font-mono text-base font-extrabold text-white">37</span>
+                                <span id="res-score-num" class="absolute font-mono text-base font-extrabold text-white">–</span>
                             </div>
                             <div class="flex flex-col">
-                                <span id="res-level-tag" class="font-mono text-xs font-bold text-red-400">CRÍTICO / COMPROMISO</span>
+                                <span id="res-level-tag" class="font-mono text-xs font-bold text-slate-400">–</span>
                                 <span class="text-[11px] text-slate-400">Índice Perimetral</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="rounded-xl bg-slate-950/70 p-4 border border-red-500/20">
-                            <div class="text-xs font-bold text-red-300 flex items-center gap-2 font-mono">
-                                <span class="inline-flex h-5 w-5 items-center justify-center rounded bg-red-500/20 text-red-400 flex-shrink-0">
-                                    <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-                                </span>
-                                <span>DMARC & SPF Ausente (Crítico)</span>
-                            </div>
-                            <p class="mt-1 text-xs text-slate-400 leading-relaxed">
-                                Su dominio carece de autenticación restrictiva. Cualquier atacante puede emitir emails haciéndose pasar por su directiva hacia clientes o bancos (Fraude de facturas).
-                            </p>
-                        </div>
-                        <div class="rounded-xl bg-slate-950/70 p-4 border border-amber-500/20">
-                            <div class="text-xs font-bold text-amber-300 flex items-center gap-2 font-mono">
-                                <span class="inline-flex h-5 w-5 items-center justify-center rounded bg-amber-500/20 text-amber-400 flex-shrink-0">
-                                    <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
-                                </span>
-                                <span>Sanción NIS2 / Pérdida de Homologación</span>
-                            </div>
-                            <p class="mt-1 text-xs text-slate-400 leading-relaxed">
-                                Con la directiva NIS2 en vigor, los clientes corporativos exigen que sus proveedores cumplan ciberhigiene perimetral básica. Impacto estimado: <strong>18.500 € – 45.000 €</strong>.
-                            </p>
-                        </div>
-                    </div>
+                    <div id="res-findings" class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-4" aria-live="polite"></div>
 
                     <!-- Lead Capture Unlock Box -->
                     <div id="lead-unlock-container" class="mt-6 pt-5 border-t border-white/10 bg-gradient-to-r from-cyan-950/30 to-blue-950/20 -mx-7 -mb-7 p-7 rounded-b-2xl">
-                        <h4 class="text-sm font-bold text-white">Desbloquea la Infografía Ejecutiva de 1 Página en PDF</h4>
+                        <h4 class="text-sm font-bold text-white">Solicita la Infografía Ejecutiva de 1 Página</h4>
                         <p class="text-xs text-slate-400 mt-1">Incluye el mapa visual del perímetro, el desglose financiero y el plan de blindaje en 24h.</p>
                         
                         <form onsubmit="event.preventDefault(); submitLeadUnlock();" class="mt-3 flex flex-col sm:flex-row gap-2.5">
                             <input type="email" id="res-email" required aria-label="Correo corporativo para recibir la infografía" placeholder="tu@email.com" class="flex-1 rounded-xl border border-white/10 bg-slate-950 px-4 py-3 font-mono text-xs text-white placeholder-slate-400 focus:border-cyan-400 focus:outline-none">
                             <button type="submit" id="unlock-btn" class="rounded-xl bg-emerald-400 px-6 py-3 font-sans text-xs font-black text-slate-950 hover:bg-emerald-300 transition-all shadow-lg shadow-emerald-500/20 cursor-pointer">
-                                Desbloquear Infografía PDF &rarr;
+                                Solicitar infografía &rarr;
                             </button>
                         </form>
                     </div>
@@ -574,13 +530,13 @@
                                 Propuesta dominante desde el primer scroll. Ruta de contacto en 1 toque en mobile y blindaje perimetral DMARC <code class="text-cyan-400">p=reject</code>.
                             </p>
                             <div class="inline-flex items-center gap-2 rounded bg-emerald-500/10 px-2.5 py-1 text-xs font-mono text-emerald-300 border border-emerald-500/25">
-                                <span id="comp-a-nis2">✓ Homologación NIS2 (Art. 21) & RGPD</span>
+                                <span id="comp-a-nis2">✓ Alineado con NIS2 (Art. 21) & RGPD</span>
                             </div>
                         </div>
 
                         <div class="flex items-center justify-between text-xs text-emerald-400 font-mono border-t border-cyan-500/20 pt-3">
                             <span id="comp-a-f1">Retención de leads: +94%</span>
-                            <span id="comp-a-f2">Certificado Digital Oficial</span>
+                            <span id="comp-a-f2">Informe técnico firmado</span>
                         </div>
                     </div>
 
@@ -614,7 +570,7 @@
                     Peritaje Judicial y Bloqueo de Fondos Cripto
                 </h2>
                 <p id="f-desc" class="mx-auto mt-4 max-w-3xl text-sm sm:text-base text-slate-300 leading-relaxed">
-                    Emitimos <strong>Dictámenes Periciales Oficiales con sellado SHA-256</strong> (UNE 197001 / ISO 27037) para sustentar querellas penales por estafa cripto y requerimientos de <strong>Preservation Letters de Emergencia</strong> ante los departamentos de Compliance de Binance, Bybit, OKX y Coinbase.
+                    Emitimos <strong>Dictámenes Periciales con sellado SHA-256</strong> (UNE 197001 / ISO 27037) para sustentar querellas penales por estafa cripto y requerimientos de <strong>Preservation Letters de Emergencia</strong> ante los departamentos de Compliance de Binance, Bybit, OKX y Coinbase.
                 </p>
             </div>
 
@@ -652,7 +608,7 @@
                         <div class="inline-flex items-center gap-1 rounded-full bg-purple-500/20 border border-purple-500/40 px-3 py-1 text-[10px] font-mono font-bold text-purple-300 mb-3">
                             <span>ISO 27037 / UNE 197001</span>
                         </div>
-                        <h3 id="f-c2-title" class="text-lg font-bold text-white">Dictamen Pericial Judicial Oficial</h3>
+                        <h3 id="f-c2-title" class="text-lg font-bold text-white">Dictamen Pericial Judicial</h3>
                         <p id="f-c2-desc" class="text-xs text-slate-300 mt-2 leading-relaxed">
                             El informe pericial definitivo que impide el archivo judicial en los Juzgados de Instrucción y fundamenta la solicitud de medidas cautelares y comisiones rogatorias.
                         </p>
@@ -681,7 +637,7 @@
                             Para fraudes a grandes patrimonios, DAOs o fondos de inversión. Monitorización 24/7 con centinelas dedicados y radicación ante agencias federales internacionales.
                         </p>
                         <ul class="mt-5 space-y-2 text-xs text-slate-300 font-mono">
-                            <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> <span id="f-c3-f1">Radicación formal ante FBI IC3 / SEC</span></li>
+                            <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> <span id="f-c3-f1">Asistencia para denunciar ante FBI IC3 / SEC</span></li>
                             <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> <span id="f-c3-f2">Monitorización 24/7 en Contabo Sentinel</span></li>
                             <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> <span id="f-c3-f3">Negociación on-chain whitehat bounty</span></li>
                         </ul>
@@ -810,7 +766,7 @@
                     <div id="meth-f1-ph" class="font-mono text-xs text-cyan-400 font-extrabold tracking-widest">FASE 01 / 48H</div>
                     <h3 id="meth-f1-title" class="mt-3 text-lg font-bold text-white">Lectura Inicial</h3>
                     <p id="meth-f1-desc" class="mt-2 text-xs text-slate-400 leading-relaxed">
-                        Inspeccionamos perimetralmente tu dominio y embudo con Gemini 3.8 Flash. Entregamos una infografía visual de 1 página con datos irrefutables.
+                        Inspeccionamos de forma pasiva tu dominio (DNS, DMARC, SPF, TLS) y tu embudo web. Entregamos una infografía visual de 1 página con datos irrefutables.
                     </p>
                 </div>
 
@@ -903,8 +859,8 @@
 
             <div class="mt-12 flex flex-wrap items-center justify-center gap-6 font-mono text-xs text-slate-500 border-t border-white/5 pt-8">
                 <span id="foot-copy">&copy; 2026 Synertalk Cyber Defense Unit</span>
-                <span id="foot-arch">Arquitectura Oficial: Google DeepMind Gemini 3.8 Flash</span>
-                <span><span id="foot-contact-lbl">Contacto Oficial:</span> <a href="mailto:auditorias@synertalk.com" class="text-slate-400 underline hover:text-white">auditorias@synertalk.com</a></span>
+                <span id="foot-arch">Auditoría pasiva y no invasiva</span>
+                <span><span id="foot-contact-lbl">Contacto:</span> <a href="mailto:auditorias@synertalk.com" class="text-slate-400 underline hover:text-white">auditorias@synertalk.com</a></span>
             </div>
         </div>
     </footer>
@@ -937,15 +893,15 @@
                 cta: "Auditoría Gratis",
                 badge: "● TIEMPO DE RESPUESTA JUDICIAL: &lt; 2H | NORMATIVAS: UNE 197001 &amp; ISO 27037",
                 h1: 'Tu dominio corporativo puede ser suplantado ahora mismo.<br><span class="italic text-warmGold">Tu evidencia pericial debe sostenerse en juicio.</span>',
-                desc: 'El 84% de despachos y empresas carecen de DMARC <code class="text-cyan-400 font-mono text-sm px-1.5 py-0.5 rounded bg-cyan-950/60 border border-cyan-500/30">p=reject</code>, exponiéndose a facturas falsas y sanciones NIS2. En Synertalk emitimos <strong>Dictámenes Periciales Oficiales con sellado SHA-256</strong> e <strong>interdicción de fondos cripto en horas doradas (0-72h)</strong>.',
+                desc: 'El 84% de despachos y empresas carecen de DMARC <code class="text-cyan-400 font-mono text-sm px-1.5 py-0.5 rounded bg-cyan-950/60 border border-cyan-500/30">p=reject</code>, exponiéndose a facturas falsas y sanciones NIS2. En Synertalk emitimos <strong>Dictámenes Periciales con sellado SHA-256</strong> e <strong>interdicción de fondos cripto en horas doradas (0-72h)</strong>.',
                 tabWeb: "🛡️ Blindaje Perimetral NIS2",
                 tabCrypto: "🚨 Interdicción Cripto (0-72h)",
                 scanBtnWeb: "Escanear en Vivo",
                 scanBtnCrypto: "Triage Forense en Vivo",
                 
                 // Top Banner
-                tickerEngineLbl: "GEMINI 3.8 FLASH CYBER ENGINE:",
-                tickerEngineMode: "Sentinel Mode (Port 8000 Verified)",
+                tickerEngineLbl: "MOTOR DE AUDITORÍA PASIVA:",
+                tickerEngineMode: "DNS · SPF · DMARC en vivo",
                 tickerDesc: "Auditorías Perimetrales bajo <strong>Directiva Europea NIS2</strong> y <strong>RGPD</strong>",
                 tickerCta: "Probar en Vivo &rarr;",
 
@@ -980,14 +936,14 @@
                 compACat: "Dirección Editorial Entregable",
                 compATitle: 'Tu problema resuelto en 48 horas.<br><span class="italic text-warmGold">Sin romper tu operativa.</span>',
                 compADesc: 'Propuesta dominante desde el primer scroll. Ruta de contacto en 1 toque en mobile y blindaje perimetral DMARC <code class="text-cyan-400">p=reject</code>.',
-                compANis2: "✓ Homologación NIS2 (Art. 21) & RGPD",
+                compANis2: "✓ Alineado con NIS2 (Art. 21) & RGPD",
                 compAF1: "Retención de leads: +94%",
-                compAF2: "Certificado Digital Oficial",
+                compAF2: "Informe técnico firmado",
 
                 // Forensic Section
                 fBadge: "UNIDAD DE INTELIGENCIA FORENSE BLOCKCHAIN & INTERDICCIÓN",
                 fH2: "Peritaje Judicial y Bloqueo de Fondos Cripto",
-                fDesc: 'Emitimos <strong>Dictámenes Periciales Oficiales con sellado SHA-256</strong> (UNE 197001 / ISO 27037) para sustentar querellas penales por estafa cripto y requerimientos de <strong>Preservation Letters de Emergencia</strong> ante los departamentos de Compliance de Binance, Bybit, OKX y Coinbase.',
+                fDesc: 'Emitimos <strong>Dictámenes Periciales con sellado SHA-256</strong> (UNE 197001 / ISO 27037) para sustentar querellas penales por estafa cripto y requerimientos de <strong>Preservation Letters de Emergencia</strong> ante los departamentos de Compliance de Binance, Bybit, OKX y Coinbase.',
                 fC1Badge: "VENTANA CRÍTICA 0 - 72H",
                 fC1Title: "Interdicción en Horas Doradas",
                 fC1Desc: "Respuesta inmediata para incidentes recientes. Rastreo determinista de la fuga on-chain y requerimientos formales de bloqueo a exchanges antes de la salida a fiat.",
@@ -997,7 +953,7 @@
                 fC1Sub: "Tarifa fija de movilización de emergencia",
                 fC1Btn: "Activar Interdicción",
                 fC2Tag: "Especial Bufetes Penalistas",
-                fC2Title: "Dictamen Pericial Judicial Oficial",
+                fC2Title: "Dictamen Pericial Judicial",
                 fC2Desc: "El informe pericial definitivo que impide el archivo judicial en los Juzgados de Instrucción y fundamenta la solicitud de medidas cautelares y comisiones rogatorias.",
                 fC2F1: "Cadena de custodia sellada con Hash SHA-256",
                 fC2F2: "Diagrama topológico de mulas y desvíos",
@@ -1008,7 +964,7 @@
                 fC3Badge: "CASOS > 100.000 € / DEFI HACKS",
                 fC3Title: "Recuperación & Bounty Intelligence",
                 fC3Desc: "Para fraudes a grandes patrimonios, DAOs o fondos de inversión. Monitorización 24/7 con centinelas dedicados y radicación ante agencias federales internacionales.",
-                fC3F1: "Radicación formal ante FBI IC3 / SEC",
+                fC3F1: "Asistencia para denunciar ante FBI IC3 / SEC",
                 fC3F2: "Monitorización 24/7 en Contabo Sentinel",
                 fC3F3: "Negociación on-chain whitehat bounty",
                 fC3Sub: "Sobre capital efectivamente recuperado",
@@ -1034,7 +990,7 @@
                 methP: "Diseñado para negocios que no pueden detenerse ni un solo segundo.",
                 methF1Ph: "FASE 01 / 48H",
                 methF1Title: "Lectura Inicial",
-                methF1Desc: "Inspeccionamos perimetralmente tu dominio y embudo con Gemini 3.8 Flash. Entregamos una infografía visual de 1 página con datos irrefutables.",
+                methF1Desc: "Inspeccionamos de forma pasiva tu dominio (DNS, DMARC, SPF, TLS) y tu embudo web. Entregamos una infografía visual de 1 página con datos irrefutables.",
                 methF2Ph: "FASE 02 / PREVIEW",
                 methF2Title: "Concepto Visual",
                 methF2Desc: "Te mostramos cómo se verá tu web modernizada y la arquitectura de blindaje antes de comprometer un solo euro. Sin riesgos.",
@@ -1060,23 +1016,23 @@
                 footP: "Recibe la infografía visual ejecutiva en menos de 48 horas sin coste ni compromiso de contratación.",
                 footBtnTxt: "Auditar Mi Empresa Ahora",
                 footCopy: "© 2026 Synertalk Cyber Defense Unit",
-                footArch: "Arquitectura Oficial: Google DeepMind Gemini 3.8 Flash",
-                footContactLbl: "Contacto Oficial:"
+                footArch: "Auditoría pasiva y no invasiva",
+                footContactLbl: "Contacto:"
             },
             en: {
                 title: "Synertalk | Perimeter Cybersecurity & Blockchain Forensic Intelligence",
                 cta: "Free Audit",
                 badge: "● JUDICIAL RESPONSE TIME: &lt; 2H | STANDARDS: ISO/IEC 27037 &amp; UNE 197001",
                 h1: 'Your corporate domain can be spoofed right now.<br><span class="italic text-warmGold">Your forensic evidence must stand in court.</span>',
-                desc: '84% of organizations lack DMARC <code class="text-cyan-400 font-mono text-sm px-1.5 py-0.5 rounded bg-cyan-950/60 border border-cyan-500/30">p=reject</code>, exposing themselves to invoice fraud and NIS2 penalties. At Synertalk we produce <strong>Certified Expert Witness Reports with immutable SHA-256 seals</strong> and <strong>golden hours crypto asset freezing (0-72h)</strong>.',
+                desc: '84% of organizations lack DMARC <code class="text-cyan-400 font-mono text-sm px-1.5 py-0.5 rounded bg-cyan-950/60 border border-cyan-500/30">p=reject</code>, exposing themselves to invoice fraud and NIS2 penalties. At Synertalk we produce <strong>Expert Witness Reports with SHA-256 integrity seals</strong> and <strong>golden hours crypto asset freezing (0-72h)</strong>.',
                 tabWeb: "🛡️ NIS2 Perimeter Defense",
                 tabCrypto: "🚨 Crypto Interdiction (0-72h)",
                 scanBtnWeb: "Scan Live Now",
                 scanBtnCrypto: "Live Forensic Triage",
 
                 // Top Banner
-                tickerEngineLbl: "GEMINI 3.8 FLASH CYBER ENGINE:",
-                tickerEngineMode: "Sentinel Mode (Port 8000 Verified)",
+                tickerEngineLbl: "PASSIVE AUDIT ENGINE:",
+                tickerEngineMode: "Live DNS · SPF · DMARC",
                 tickerDesc: "Perimeter Audits under <strong>European NIS2 Directive</strong> & <strong>GDPR</strong>",
                 tickerCta: "Test Live Now &rarr;",
 
@@ -1111,14 +1067,14 @@
                 compACat: "Deliverable Editorial Direction",
                 compATitle: 'Your problem solved in 48 hours.<br><span class="italic text-warmGold">Without breaking operations.</span>',
                 compADesc: 'Dominant value proposition from first scroll. 1-touch mobile contact path and DMARC perimeter shield <code class="text-cyan-400">p=reject</code>.',
-                compANis2: "✓ NIS2 Homologation (Art. 21) & GDPR",
+                compANis2: "✓ Aligned with NIS2 (Art. 21) & GDPR",
                 compAF1: "Lead retention: +94%",
-                compAF2: "Official Digital Certificate",
+                compAF2: "Signed technical report",
 
                 // Forensic Section
                 fBadge: "BLOCKCHAIN FORENSIC INTELLIGENCE & ASSET INTERDICTION",
                 fH2: "Court-Ready Expert Witness & Crypto Asset Recovery",
-                fDesc: 'We deliver <strong>Certified Forensic Expert Reports with immutable SHA-256 seals</strong> (ISO/IEC 27037 / Daubert Standard) to substantiate criminal fraud lawsuits and dispatch <strong>Emergency Preservation Letters</strong> to Binance, Bybit, OKX and Coinbase compliance desks.',
+                fDesc: 'We deliver <strong>Forensic Expert Reports with SHA-256 integrity seals</strong> (ISO/IEC 27037 / Daubert Standard) to substantiate criminal fraud lawsuits and dispatch <strong>Emergency Preservation Letters</strong> to Binance, Bybit, OKX and Coinbase compliance desks.',
                 fC1Badge: "CRITICAL WINDOW 0 - 72H",
                 fC1Title: "Golden Hours Interdiction",
                 fC1Desc: "Immediate response for recent crypto thefts. Real-time escape tracing and formal administrative freeze filings before fiat exit.",
@@ -1139,7 +1095,7 @@
                 fC3Badge: "CASES > $100,000 / DEFI HACKS",
                 fC3Title: "Asset Recovery & Bounty Intelligence",
                 fC3Desc: "Advanced forensic interdiction for HNWIs, DAOs and investment funds. 24/7 dedicated Sentinel monitoring and international federal filings.",
-                fC3F1: "Formal federal filings with FBI IC3 / SEC TCR",
+                fC3F1: "Assistance filing reports with FBI IC3 / SEC TCR",
                 fC3F2: "24/7 autonomous monitoring on Contabo VPS",
                 fC3F3: "On-chain whitehat bounty negotiation",
                 fC3Sub: "On capital successfully recovered/frozen",
@@ -1165,7 +1121,7 @@
                 methP: "Engineered for businesses that cannot stop for a single second.",
                 methF1Ph: "PHASE 01 / 48H",
                 methF1Title: "Initial Read",
-                methF1Desc: "We inspect your perimeter domain and funnel with Gemini 3.8 Flash. We deliver an executive 1-page visual infographic with irrefutable metrics.",
+                methF1Desc: "We passively inspect your domain (DNS, DMARC, SPF, TLS) and your web funnel. We deliver an executive 1-page visual infographic with irrefutable metrics.",
                 methF2Ph: "PHASE 02 / PREVIEW",
                 methF2Title: "Visual Concept",
                 methF2Desc: "We showcase how your modernized website and perimeter architecture look before committing a single euro. Risk-free.",
@@ -1191,8 +1147,8 @@
                 footP: "Receive the 1-page executive visual infographic in under 48 hours at zero cost and zero hiring commitment.",
                 footBtnTxt: "Audit My Organization Now",
                 footCopy: "© 2026 Synertalk Cyber Defense Unit",
-                footArch: "Official Architecture: Google DeepMind Gemini 3.8 Flash",
-                footContactLbl: "Official Contact:"
+                footArch: "Passive, non-invasive auditing",
+                footContactLbl: "Contact:"
             }
         };
 
@@ -1618,137 +1574,322 @@
             `;
         }
 
-        // Live Scanner State & Logic
+        // Live Scanner State & Logic (real, passive DNS checks via DNS-over-HTTPS)
         let lastScanDomain = "";
         let lastScanClientId = null;
+        let lastScanScore = null;
+        const CONTACT_EMAIL = 'auditorias@synertalk.com';
+
+        function escapeHtml(str) {
+            return String(str).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+        }
+
+        function normalizeDomain(raw) {
+            let value = String(raw || '').trim();
+            if (!value) return null;
+            if (!/^[a-z][a-z0-9+.-]*:\/\//i.test(value)) value = 'http://' + value;
+            let host;
+            try { host = new URL(value).hostname.toLowerCase().replace(/\.$/, ''); } catch (e) { return null; }
+            if (host.startsWith('www.')) host = host.slice(4);
+            return /^(?=.{1,253}$)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9-]{2,63}$/.test(host) ? host : null;
+        }
+
+        async function dohQuery(name, type) {
+            const resolvers = [
+                { url: `https://dns.google/resolve?name=${encodeURIComponent(name)}&type=${type}&do=1`, headers: {} },
+                { url: `https://cloudflare-dns.com/dns-query?name=${encodeURIComponent(name)}&type=${type}&do=1`, headers: { accept: 'application/dns-json' } }
+            ];
+            for (const r of resolvers) {
+                try {
+                    const ctrl = new AbortController();
+                    const timer = setTimeout(() => ctrl.abort(), 6000);
+                    const res = await fetch(r.url, { headers: r.headers, signal: ctrl.signal });
+                    clearTimeout(timer);
+                    if (res.ok) return await res.json();
+                } catch (e) { /* try next resolver */ }
+            }
+            throw new Error('DNS resolvers unreachable');
+        }
+
+        async function txtRecords(name) {
+            const data = await dohQuery(name, 'TXT');
+            return (data.Answer || [])
+                .filter(a => a.type === 16)
+                .map(a => String(a.data).replace(/"\s+"/g, '').replace(/^"|"$/g, ''));
+        }
+
+        async function runPassiveAudit(domain) {
+            const [base, aRec, dmarcTxt, mx, caa, mtaSts, tlsRpt] = await Promise.all([
+                txtRecords(domain),
+                dohQuery(domain, 'A'),
+                txtRecords('_dmarc.' + domain),
+                dohQuery(domain, 'MX'),
+                dohQuery(domain, 'CAA'),
+                txtRecords('_mta-sts.' + domain),
+                txtRecords('_smtp._tls.' + domain)
+            ]);
+            if (aRec.Status === 3) return { exists: false };
+
+            const findings = [];
+            let score = 0;
+            const add = (key, points, status) => { score += points; findings.push({ key, status }); };
+
+            const spf = base.filter(t => /^v=spf1(\s|$)/i.test(t));
+            if (spf.length === 0) add('spf', 0, 'bad');
+            else if (spf.length > 1) add('spfMulti', 5, 'bad');
+            else if (/\s-all\b/i.test(spf[0])) add('spfHard', 25, 'good');
+            else if (/\s~all\b/i.test(spf[0])) add('spfSoft', 18, 'warn');
+            else add('spfWeak', 5, 'bad');
+
+            const dmarc = dmarcTxt.filter(t => /^v=DMARC1/i.test(t));
+            const policy = dmarc.length === 1 ? ((dmarc[0].match(/(?:^|;)\s*p\s*=\s*(\w+)/i) || [])[1] || '').toLowerCase() : '';
+            if (dmarc.length === 0) add('dmarc', 0, 'bad');
+            else if (dmarc.length > 1) add('dmarcMulti', 5, 'bad');
+            else if (policy === 'reject') add('dmarcReject', 45, 'good');
+            else if (policy === 'quarantine') add('dmarcQuarantine', 30, 'warn');
+            else add('dmarcNone', 10, 'bad');
+
+            if (aRec.AD === true) add('dnssec', 10, 'good'); else add('dnssecNo', 0, 'warn');
+            if ((caa.Answer || []).some(a => a.type === 257)) add('caa', 10, 'good'); else add('caaNo', 0, 'warn');
+
+            const hasMx = (mx.Answer || []).some(a => a.type === 15 && !/^0\s+\.?$/.test(String(a.data).trim()));
+            if (mtaSts.some(t => /^v=STSv1/i.test(t))) add('mtaSts', 5, 'good'); else add('mtaStsNo', 0, hasMx ? 'warn' : 'info');
+            if (tlsRpt.some(t => /^v=TLSRPTv1/i.test(t))) add('tlsRpt', 5, 'good'); else add('tlsRptNo', 0, hasMx ? 'warn' : 'info');
+
+            return { exists: true, score, findings, hasMx };
+        }
+
+        const findingText = {
+            es: {
+                spf: ['SPF ausente', 'No hay registro SPF: cualquier servidor puede enviar correo en nombre de tu dominio.'],
+                spfMulti: ['Varios registros SPF', 'Hay más de un registro SPF; los receptores lo tratan como error (permerror).'],
+                spfHard: ['SPF estricto (-all)', 'Solo los servidores autorizados pueden enviar correo con tu dominio.'],
+                spfSoft: ['SPF permisivo (~all)', 'El SPF existe pero solo marca como sospechoso el correo no autorizado.'],
+                spfWeak: ['SPF sin política de rechazo', 'El SPF termina en ?all, +all o sin "all": no protege frente a suplantación.'],
+                dmarc: ['DMARC ausente', 'Sin DMARC, los receptores no saben qué hacer con correos que suplantan tu dominio (fraude de facturas).'],
+                dmarcMulti: ['Varios registros DMARC', 'Hay más de un registro DMARC; los receptores lo ignoran.'],
+                dmarcReject: ['DMARC p=reject', 'Los correos que suplantan tu dominio se rechazan.'],
+                dmarcQuarantine: ['DMARC p=quarantine', 'Los correos suplantados van a spam, pero no se rechazan.'],
+                dmarcNone: ['DMARC en modo monitorización (p=none)', 'DMARC existe pero no bloquea la suplantación.'],
+                dnssec: ['DNSSEC activo', 'Las respuestas DNS de tu dominio están firmadas.'],
+                dnssecNo: ['DNSSEC no validado', 'Las respuestas DNS no están firmadas: posible envenenamiento de caché.'],
+                caa: ['Registro CAA presente', 'Solo las autoridades autorizadas pueden emitir certificados TLS para tu dominio.'],
+                caaNo: ['Sin registro CAA', 'Cualquier autoridad de certificación puede emitir certificados para tu dominio.'],
+                mtaSts: ['MTA-STS activo', 'El correo entrante exige TLS.'],
+                mtaStsNo: ['Sin MTA-STS', 'El correo entrante no exige cifrado TLS entre servidores.'],
+                tlsRpt: ['TLS-RPT activo', 'Recibes informes de fallos de cifrado en el correo.'],
+                tlsRptNo: ['Sin TLS-RPT', 'No recibes informes de fallos de cifrado en el correo.']
+            },
+            en: {
+                spf: ['SPF missing', 'No SPF record: any server can send email on behalf of your domain.'],
+                spfMulti: ['Multiple SPF records', 'More than one SPF record; receivers treat this as an error (permerror).'],
+                spfHard: ['Strict SPF (-all)', 'Only authorized servers can send email using your domain.'],
+                spfSoft: ['Lenient SPF (~all)', 'SPF exists but only flags unauthorized email as suspicious.'],
+                spfWeak: ['SPF without rejection policy', 'SPF ends in ?all, +all or has no "all": no spoofing protection.'],
+                dmarc: ['DMARC missing', 'Without DMARC, receivers do not know what to do with emails spoofing your domain (invoice fraud).'],
+                dmarcMulti: ['Multiple DMARC records', 'More than one DMARC record; receivers ignore it.'],
+                dmarcReject: ['DMARC p=reject', 'Emails spoofing your domain are rejected.'],
+                dmarcQuarantine: ['DMARC p=quarantine', 'Spoofed emails go to spam but are not rejected.'],
+                dmarcNone: ['DMARC in monitoring mode (p=none)', 'DMARC exists but does not block spoofing.'],
+                dnssec: ['DNSSEC active', 'Your domain DNS answers are signed.'],
+                dnssecNo: ['DNSSEC not validated', 'DNS answers are unsigned: cache poisoning is possible.'],
+                caa: ['CAA record present', 'Only authorized CAs can issue TLS certificates for your domain.'],
+                caaNo: ['No CAA record', 'Any certificate authority can issue certificates for your domain.'],
+                mtaSts: ['MTA-STS active', 'Inbound email requires TLS.'],
+                mtaStsNo: ['No MTA-STS', 'Inbound email does not require TLS between servers.'],
+                tlsRpt: ['TLS-RPT active', 'You receive reports about email encryption failures.'],
+                tlsRptNo: ['No TLS-RPT', 'You do not receive reports about email encryption failures.']
+            }
+        };
+
+        function renderFindings(findings) {
+            const box = document.getElementById('res-findings');
+            if (!box) return;
+            const t = findingText[currentPerimeterLang] || findingText.es;
+            const styles = {
+                bad: ['border-red-500/20', 'text-red-300', '✕'],
+                warn: ['border-amber-500/20', 'text-amber-300', '!'],
+                good: ['border-emerald-500/20', 'text-emerald-300', '✓'],
+                info: ['border-white/10', 'text-slate-300', 'i']
+            };
+            const order = { bad: 0, warn: 1, info: 2, good: 3 };
+            box.innerHTML = findings.slice().sort((a, b) => order[a.status] - order[b.status]).map(f => {
+                const [border, color, icon] = styles[f.status];
+                const [title, desc] = t[f.key];
+                return `<div class="rounded-xl bg-slate-950/70 p-4 border ${border}">
+                    <div class="text-xs font-bold ${color} flex items-center gap-2 font-mono"><span aria-hidden="true">${icon}</span><span>${escapeHtml(title)}</span></div>
+                    <p class="mt-1 text-xs text-slate-400 leading-relaxed">${escapeHtml(desc)}</p>
+                </div>`;
+            }).join('');
+        }
+
+        function setTerminalHeader(title, sub) {
+            const t = document.getElementById('scan-term-title');
+            const s = document.getElementById('scan-term-sub');
+            if (t) t.textContent = title;
+            if (s) s.textContent = sub;
+        }
+
+        function scanLog(logs, text, cls) {
+            const div = document.createElement('div');
+            if (cls) div.className = cls;
+            div.textContent = '> ' + text;
+            logs.appendChild(div);
+        }
+
+        function resetScanButton(btn) {
+            btn.disabled = false;
+            btn.innerHTML = `<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg> <span id="scan-btn-txt">${currentPerimeterLang === 'en' ? 'Scan Again' : 'Escanear de Nuevo'}</span>`;
+        }
 
         async function triggerLiveScan() {
             const input = document.getElementById('target-input');
-            let domain = input.value.trim().replace(/^https?:\/\//i, '').replace(/\/.*$/, '');
-            if (!domain) return;
-
-            lastScanDomain = domain;
             const btn = document.getElementById('scan-btn');
             const terminal = document.getElementById('scan-terminal');
             const logs = document.getElementById('scan-logs');
             const pct = document.getElementById('scan-pct');
             const resultCard = document.getElementById('scan-result-card');
+            const en = currentPerimeterLang === 'en';
 
-            btn.disabled = true;
-            btn.innerHTML = `<span class="h-4 w-4 rounded-full border-2 border-slate-950 border-t-transparent animate-spin inline-block mr-1"></span> Escaneando...`;
-            
+            const domain = normalizeDomain(input.value);
             resultCard.classList.add('hidden');
             terminal.classList.remove('hidden');
-            logs.innerHTML = '';
-
-            const steps = [
-                { text: `[1/4] Resolviendo registros DNS autoritativos para ${domain}...`, pct: "25%" },
-                { text: `[2/4] Verificando autenticación DMARC p=reject & SPF...`, pct: "50%" },
-                { text: `[3/4] Inspeccionando certificado SSL y cabeceras HSTS/CSP...`, pct: "75%" },
-                { text: `[4/4] Mapeando Shadow IT y exposición legal Directiva NIS2...`, pct: "100%" }
-            ];
-
-            for (let i = 0; i < steps.length; i++) {
-                await new Promise(r => setTimeout(r, 650));
-                logs.innerHTML += `<div><span class="text-cyan-400">></span> ${steps[i].text}</div>`;
-                pct.innerText = steps[i].pct;
+            logs.textContent = '';
+            pct.innerText = '0%';
+            if (!domain) {
+                scanLog(logs, en ? 'Invalid domain. Example: yourcompany.com' : 'Dominio no válido. Ejemplo: tuempresa.com', 'text-red-400');
+                return;
             }
 
-            let score = 37;
+            setTerminalHeader(en ? 'PASSIVE AUDIT IN PROGRESS' : 'AUDITORÍA PASIVA EN CURSO',
+                en ? 'Querying public DNS records (DNS-over-HTTPS)...' : 'Consultando registros DNS públicos (DNS-over-HTTPS)...');
+            lastScanDomain = domain;
+            lastScanClientId = null;
+            btn.disabled = true;
+            btn.innerHTML = `<span class="h-4 w-4 rounded-full border-2 border-slate-950 border-t-transparent animate-spin inline-block mr-1"></span> ${en ? 'Scanning...' : 'Escaneando...'}`;
+
+            scanLog(logs, (en ? 'Querying public DNS records for ' : 'Consultando registros DNS públicos de ') + domain + '...', 'text-slate-300');
+            pct.innerText = '30%';
+
+            let result;
+            try {
+                result = await runPassiveAudit(domain);
+            } catch (e) {
+                scanLog(logs, en ? 'Could not reach the DNS resolvers. Check your connection and try again.' : 'No se pudo contactar con los resolvedores DNS. Revisa tu conexión e inténtalo de nuevo.', 'text-red-400');
+                resetScanButton(btn);
+                return;
+            }
+            if (!result.exists) {
+                scanLog(logs, en ? 'The domain does not exist (NXDOMAIN).' : 'El dominio no existe (NXDOMAIN).', 'text-red-400');
+                resetScanButton(btn);
+                return;
+            }
+            pct.innerText = '100%';
+
+            // Optional: register the lead in the Synertalk backend when it is deployed alongside this page.
             try {
                 const res = await fetch('/api/audit', {
                     method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ domain: domain, sector: 'Lead Web Synertalk' })
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ domain: domain, sector: 'Lead Web Synertalk', passive_score: result.score })
                 });
-                const data = await res.json();
-                if (data.score !== undefined) score = data.score;
-                if (data.client_id) lastScanClientId = data.client_id;
-            } catch (e) {
-                console.error("Error conectando con API de auditoría:", e);
-                score = 37;
-            }
+                if (res.ok && (res.headers.get('content-type') || '').includes('application/json')) {
+                    const data = await res.json();
+                    if (data.client_id) lastScanClientId = data.client_id;
+                }
+            } catch (e) { /* backend not available: the scan result stands on its own */ }
 
+            const score = result.score;
+            lastScanScore = score;
             document.getElementById('res-domain').innerText = domain;
             document.getElementById('res-score-num').innerText = score;
-            
+            renderFindings(result.findings);
+
             const circle = document.getElementById('gauge-circle-elem');
             const circumference = 251.2;
-            const offset = circumference - (score / 100) * circumference;
-            circle.style.strokeDashoffset = offset;
+            circle.style.strokeDashoffset = circumference - (score / 100) * circumference;
 
+            const tag = document.getElementById('res-level-tag');
             if (score >= 80) {
                 circle.setAttribute('stroke', '#00E599');
-                document.getElementById('res-level-tag').innerText = "SEGURO / HOMOLOGADO";
-                document.getElementById('res-level-tag').className = "font-mono text-xs font-bold text-emerald-400";
+                tag.innerText = en ? 'STRONG' : 'ROBUSTO';
+                tag.className = "font-mono text-xs font-bold text-emerald-400";
             } else if (score >= 50) {
                 circle.setAttribute('stroke', '#F59E0B');
-                document.getElementById('res-level-tag').innerText = "RIESGO MEDIO / ATENCIÓN";
-                document.getElementById('res-level-tag').className = "font-mono text-xs font-bold text-amber-400";
+                tag.innerText = en ? 'MEDIUM RISK' : 'RIESGO MEDIO';
+                tag.className = "font-mono text-xs font-bold text-amber-400";
             } else {
                 circle.setAttribute('stroke', '#FF3366');
-                document.getElementById('res-level-tag').innerText = "CRÍTICO / SUPLANTABLE";
-                document.getElementById('res-level-tag').className = "font-mono text-xs font-bold text-red-400";
+                tag.innerText = en ? 'HIGH RISK / SPOOFABLE' : 'RIESGO ALTO / SUPLANTABLE';
+                tag.className = "font-mono text-xs font-bold text-red-400";
             }
 
             terminal.classList.add('hidden');
             resultCard.classList.remove('hidden');
-            btn.disabled = false;
-            btn.innerHTML = `<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg> <span>Escanear de Nuevo</span>`;
+            resetScanButton(btn);
+        }
+
+        function buildMailto(subject, body) {
+            return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         }
 
         async function submitLeadUnlock() {
             const emailInput = document.getElementById('res-email');
             const email = emailInput ? emailInput.value.trim() : '';
-            const domain = document.getElementById('res-domain').innerText || lastScanDomain;
-            if (!email || !domain) return;
+            const domain = lastScanDomain;
+            const en = currentPerimeterLang === 'en';
+            if (!email || !domain || (emailInput && !emailInput.checkValidity())) return;
 
             const unlockBtn = document.getElementById('unlock-btn');
             if (unlockBtn) {
                 unlockBtn.disabled = true;
-                unlockBtn.innerHTML = `<span class="h-3.5 w-3.5 rounded-full border-2 border-slate-950 border-t-transparent animate-spin inline-block mr-1"></span> Desbloqueando...`;
+                unlockBtn.innerHTML = `<span class="h-3.5 w-3.5 rounded-full border-2 border-slate-950 border-t-transparent animate-spin inline-block mr-1"></span> ${en ? 'Sending...' : 'Enviando...'}`;
             }
 
-            // Sync with local CRM if client_id exists
+            // Sync with the CRM backend only when the scan was registered there
+            let registered = false;
             if (lastScanClientId) {
                 try {
-                    await fetch(`/api/clients/${lastScanClientId}/status`, {
+                    const res = await fetch(`/api/clients/${encodeURIComponent(lastScanClientId)}/status`, {
                         method: 'POST',
-                        headers: {'Content-Type': 'application/json'},
+                        headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
                             status: 'CONTACTADO',
                             contact_email: email,
                             notes: 'Lead captado automáticamente desde la landing Synertalk 2026'
                         })
                     });
+                    registered = res.ok;
                 } catch (e) {
                     console.error("Error al actualizar estado en CRM:", e);
                 }
             }
 
-            const safeName = domain.replace(/\./g, '_').replace(/:/g, '_').replace(/\//g, '');
+            const mailto = buildMailto(
+                en ? `Infographic request: ${domain}` : `Solicitud de infografía: ${domain}`,
+                en ? `Domain: ${domain}\nPassive score: ${lastScanScore}/100\nContact email: ${email}\n`
+                   : `Dominio: ${domain}\nPuntuación pasiva: ${lastScanScore}/100\nEmail de contacto: ${email}\n`
+            );
+            const safeDomain = escapeHtml(domain);
+            const safeEmail = escapeHtml(email);
             const container = document.getElementById('lead-unlock-container');
-            
+
+            const message = registered
+                ? (en ? `We have received your request. We will send the infographic for <strong class="text-cyan-400">${safeDomain}</strong> to <span class="text-white font-mono">${safeEmail}</span> within 48 hours.`
+                      : `Hemos recibido tu solicitud. Enviaremos la infografía de <strong class="text-cyan-400">${safeDomain}</strong> a <span class="text-white font-mono">${safeEmail}</span> en un plazo de 48 horas.`)
+                : (en ? `To receive the infographic for <strong class="text-cyan-400">${safeDomain}</strong>, send us the pre-filled email below.`
+                      : `Para recibir la infografía de <strong class="text-cyan-400">${safeDomain}</strong>, envíanos el email que hemos preparado.`);
+            const button = registered ? '' : `
+                    <div class="mt-5 flex flex-wrap items-center justify-center gap-3">
+                        <a href="${escapeHtml(mailto)}" class="inline-flex items-center gap-2 rounded-xl bg-emerald-400 px-5 py-3 text-xs font-black text-slate-950 hover:bg-emerald-300 transition-all shadow-lg shadow-emerald-500/25 active:scale-95">
+                            <span>${en ? 'Send request by email' : 'Enviar solicitud por email'}</span>
+                        </a>
+                    </div>`;
+
             container.innerHTML = `
                 <div class="rounded-xl bg-emerald-950/40 border border-emerald-500/30 p-6 text-center shadow-2xl">
-                    <div class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 mb-3 border border-emerald-500/40">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <h4 class="text-base font-bold text-white">¡Expediente de Ciberseguridad Desbloqueado!</h4>
-                    <p class="text-xs text-slate-300 mt-1 max-w-md mx-auto">
-                        Hemos asociado el informe oficial para <strong class="text-cyan-400">${domain}</strong> a <span class="text-white font-mono">${email}</span>. Puedes descargar tus entregables ahora mismo:
-                    </p>
-                    
-                    <div class="mt-5 flex flex-wrap items-center justify-center gap-3">
-                        <a href="/reports/${safeName}_infografia.pdf" target="_blank" download class="inline-flex items-center gap-2 rounded-xl bg-emerald-400 px-5 py-3 text-xs font-black text-slate-950 hover:bg-emerald-300 transition-all shadow-lg shadow-emerald-500/25 active:scale-95">
-                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                            <span>Descargar Infografía PDF (1 Pág)</span>
-                        </a>
-                        <a href="/reports/${safeName}_dossier.html" target="_blank" class="inline-flex items-center gap-2 rounded-xl bg-slate-900 border border-white/15 px-4 py-3 text-xs font-bold text-slate-200 hover:text-white hover:border-cyan-400 transition-all">
-                            <svg class="h-4 w-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                            <span>Ver Dossier Web Completo</span>
-                        </a>
-                    </div>
+                    <h4 class="text-base font-bold text-white">${registered ? (en ? 'Request received' : 'Solicitud recibida') : (en ? 'One last step' : 'Último paso')}</h4>
+                    <p class="text-xs text-slate-300 mt-1 max-w-md mx-auto">${message}</p>${button}
                 </div>
             `;
         }
@@ -1813,6 +1954,18 @@
             }
         }
 
+        function detectChainInput(value) {
+            const v = value.trim();
+            if (/^0x[0-9a-fA-F]{40}$/.test(v)) return { kind: 'evmAddress', explorer: `https://etherscan.io/address/${v}` };
+            if (/^0x[0-9a-fA-F]{64}$/.test(v)) return { kind: 'evmTx', explorer: `https://etherscan.io/tx/${v}` };
+            if (/^T[1-9A-HJ-NP-Za-km-z]{33}$/.test(v)) return { kind: 'tronAddress', explorer: `https://tronscan.org/#/address/${v}` };
+            if (/^(bc1[02-9ac-hj-np-z]{11,71}|[13][1-9A-HJ-NP-Za-km-z]{25,34})$/.test(v)) return { kind: 'btcAddress', explorer: `https://mempool.space/address/${v}` };
+            if (/^[0-9a-fA-F]{64}$/.test(v)) return { kind: 'hexTx', explorer: null };
+            if (/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(v)) return { kind: 'solAddress', explorer: `https://solscan.io/account/${v}` };
+            if (/^[1-9A-HJ-NP-Za-km-z]{86,88}$/.test(v)) return { kind: 'solTx', explorer: `https://solscan.io/tx/${v}` };
+            return null;
+        }
+
         async function executeCryptoTriage() {
             const input = document.getElementById('target-input').value.trim();
             if (!input) return;
@@ -1821,52 +1974,52 @@
             const logs = document.getElementById('scan-logs');
             const pct = document.getElementById('scan-pct');
             const resultCard = document.getElementById('scan-result-card');
-            const btn = document.getElementById('scan-btn');
+            const en = currentPerimeterLang === 'en';
 
             if (resultCard) resultCard.classList.add('hidden');
             if (terminal) terminal.classList.remove('hidden');
-            if (logs) logs.innerHTML = '';
-            if (pct) pct.innerText = '15%';
-            if (btn) btn.disabled = true;
+            if (pct) pct.innerText = '';
+            if (!logs) return;
+            logs.textContent = '';
 
-            const steps = currentPerimeterLang === 'en' ? [
-                '[1/4] Detecting network layer (EVM / TRC-20 / UTXO / Solana)...',
-                '[2/4] Querying mempool & historical contract call traces...',
-                '[3/4] Reconstructing money mule graph & identifying CEX deposit address...',
-                '[4/4] Cross-checking OFAC SDN sanction lists & Criminal IP intelligence...'
-            ] : [
-                '[1/4] Identificando arquitectura de red (EVM / TRC-20 / UTXO / Solana)...',
-                '[2/4] Consultando libro mayor descentralizado y decodificando contratos/eventos...',
-                '[3/4] Mapeando grafo de saltos e identificando cuenta de depósito en CEX...',
-                '[4/4] Verificando contra listas OFAC SDN y base IOCs de cibercrimen...'
-            ];
-
-            for (let i = 0; i < steps.length; i++) {
-                await new Promise(r => setTimeout(r, 650));
-                if (logs) logs.innerHTML += `<div class="text-purple-300">> ${steps[i]}</div>`;
-                if (pct) pct.innerText = `${(i + 1) * 25}%`;
+            setTerminalHeader(en ? 'CRYPTO CASE INTAKE' : 'RECEPCIÓN DE CASO CRIPTO',
+                en ? 'Format check only: no automatic tracing' : 'Solo se comprueba el formato: sin rastreo automático');
+            const detected = detectChainInput(input);
+            if (!detected) {
+                scanLog(logs, en ? 'Unrecognized format. Paste a wallet address or transaction hash (ETH/EVM, TRON, BTC or Solana).'
+                                 : 'Formato no reconocido. Pega una dirección o un hash de transacción (ETH/EVM, TRON, BTC o Solana).', 'text-red-400');
+                return;
             }
 
-            await new Promise(r => setTimeout(r, 800));
-            const caseId = Math.floor(1000 + Math.random() * 9000);
+            const labels = {
+                es: { evmAddress: 'dirección EVM (Ethereum, BSC, Polygon…)', evmTx: 'hash de transacción EVM', tronAddress: 'dirección TRON', btcAddress: 'dirección Bitcoin', hexTx: 'hash de transacción (Bitcoin u otra red)', solAddress: 'dirección Solana', solTx: 'firma de transacción Solana' },
+                en: { evmAddress: 'EVM address (Ethereum, BSC, Polygon…)', evmTx: 'EVM transaction hash', tronAddress: 'TRON address', btcAddress: 'Bitcoin address', hexTx: 'transaction hash (Bitcoin or other network)', solAddress: 'Solana address', solTx: 'Solana transaction signature' }
+            };
+            const kindLabel = labels[en ? 'en' : 'es'][detected.kind];
+            const mailto = buildMailto(
+                en ? 'Crypto fraud case review request' : 'Solicitud de revisión de caso cripto',
+                en ? `Identifier (${kindLabel}): ${input}\nDate of the loss:\nAmount and asset:\nShort description:\n`
+                   : `Identificador (${kindLabel}): ${input}\nFecha de la pérdida:\nImporte y activo:\nBreve descripción:\n`
+            );
+            const explorerLink = detected.explorer
+                ? `<a href="${escapeHtml(detected.explorer)}" target="_blank" rel="noopener noreferrer" class="text-purple-400 underline">${en ? 'View on public block explorer' : 'Ver en el explorador público'}</a>`
+                : '';
 
-            if (currentPerimeterLang === 'en') {
-                if (logs) logs.innerHTML += `
-                    <div class="mt-4 pt-3 border-t border-purple-500/30 text-white font-sans">
-                        <div class="font-bold text-sm text-emerald-400 mb-1">✓ Actionable On-Chain Traceability Confirmed</div>
-                        <p class="text-xs text-slate-300">Outbound transactions and intermediate VASP entities identified. To dispatch an <strong>Emergency Preservation Letter (<60m)</strong> to Binance/OKX/Coinbase or commission the <strong>Court-Ready Expert Witness Report (SHA-256)</strong>, contact our directorate at <a href="mailto:auditorias@synertalk.com" class="text-purple-400 underline font-mono">auditorias@synertalk.com</a> quoting reference <strong>CASE-${caseId}</strong>.</p>
+            logs.innerHTML = `
+                <div class="pt-1 text-white font-sans">
+                    <div class="font-bold text-sm text-purple-300 mb-1">${en ? 'Format recognized' : 'Formato reconocido'}: ${escapeHtml(kindLabel)}</div>
+                    <p class="text-xs text-slate-300">${en
+                        ? 'This page does not trace funds automatically and has not analyzed this identifier yet. On-chain tracing is performed manually by an analyst; we will tell you whether the funds are traceable before you commit to any paid service.'
+                        : 'Esta página no rastrea fondos de forma automática y todavía no ha analizado este identificador. El rastreo on-chain lo realiza manualmente un analista; te diremos si los fondos son rastreables antes de que contrates ningún servicio de pago.'}</p>
+                    <p class="text-xs text-amber-300 mt-2">${en
+                        ? 'Warning: no one can guarantee recovery of stolen crypto. Be wary of anyone who asks for upfront payment promising to recover your funds.'
+                        : 'Aviso: nadie puede garantizar la recuperación de criptoactivos robados. Desconfía de quien pida pagos por adelantado prometiendo recuperar tus fondos.'}</p>
+                    <div class="mt-3 flex flex-wrap items-center gap-4 text-xs">
+                        <a href="${escapeHtml(mailto)}" class="rounded-lg bg-purple-500 px-4 py-2 font-bold text-white hover:bg-purple-400">${en ? 'Request a case review' : 'Solicitar revisión del caso'}</a>
+                        ${explorerLink}
                     </div>
-                `;
-            } else {
-                if (logs) logs.innerHTML += `
-                    <div class="mt-4 pt-3 border-t border-purple-500/30 text-white font-sans">
-                        <div class="font-bold text-sm text-emerald-400 mb-1">✓ Trazabilidad Positiva Identificada</div>
-                        <p class="text-xs text-slate-300">Se han localizado transacciones salientes y entidades intermediarias con trazabilidad hacia exchange. Para emitir la <strong>Preservation Letter de Emergencia (&lt;60m)</strong> o generar el <strong>Dictamen Pericial Judicial (SHA-256)</strong>, contacte a nuestro equipo en <a href="mailto:auditorias@synertalk.com" class="text-purple-400 underline font-mono">auditorias@synertalk.com</a> indicando la referencia <strong>CASE-${caseId}</strong>.</p>
-                    </div>
-                `;
-            }
-
-            if (btn) btn.disabled = false;
+                </div>
+            `;
         }
 
         // Run initial translation on page load
@@ -1886,11 +2039,6 @@
         }
     </script>
 
-
-        
-
-    </script>
-
     <!-- WebMCP: Model Context Protocol Tool Registration for AI Browser Agents -->
     <script>
         if (typeof navigator !== 'undefined' && navigator.modelContext && typeof navigator.modelContext.provideContext === 'function') {
@@ -1908,10 +2056,15 @@
                                 required: ["domain"]
                             },
                             execute: async ({ domain }) => {
+                                const host = normalizeDomain(domain);
+                                if (!host) return { error: "invalid_domain" };
+                                const result = await runPassiveAudit(host);
+                                if (!result.exists) return { domain: host, error: "nxdomain" };
                                 return {
-                                    domain: domain,
-                                    nis2_compliance: "REVISIÓN REQUERIDA",
-                                    dmarc_status: "INSPECCIÓN ACTIVA",
+                                    domain: host,
+                                    passive_score: result.score,
+                                    findings: result.findings.map(f => ({ check: f.key, status: f.status })),
+                                    note: "Passive DNS checks only (SPF, DMARC, DNSSEC, CAA, MTA-STS, TLS-RPT).",
                                     service_url: "https://web.synertalk.com/#sectores"
                                 };
                             }

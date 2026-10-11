@@ -11,7 +11,6 @@ export default {
         status: 200,
         headers: {
           "content-type": "text/markdown; charset=utf-8",
-          "x-markdown-tokens": "1420",
           "access-control-allow-origin": "*",
           "vary": "Accept"
         }

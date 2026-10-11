@@ -8,8 +8,8 @@
       "type": "skill",
       "description": "Auditoría perimetral y verificación DMARC/SPF bajo la directiva NIS2",
       "url": "https://web.synertalk.com/.well-known/agent-skills/nis2-audit/SKILL.md",
-      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "digest": "sha256:472c7fe0ac62a07b20d82afe8edd6c0434c23fdc887d5401c5d13357f98bbf61",
+      "sha256": "472c7fe0ac62a07b20d82afe8edd6c0434c23fdc887d5401c5d13357f98bbf61",
       "tags": [
         "cybersecurity",
         "nis2",
@@ -23,8 +23,8 @@
       "type": "skill",
       "description": "Peritaje judicial oficial y preservación de fondos en Binance/OKX",
       "url": "https://web.synertalk.com/.well-known/agent-skills/crypto-forensics/SKILL.md",
-      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "digest": "sha256:b98c5a8aa1c72e4749d3fc2d5507c03f32123e6f9bd7634a140b76f766b3e00b",
+      "sha256": "b98c5a8aa1c72e4749d3fc2d5507c03f32123e6f9bd7634a140b76f766b3e00b",
       "tags": [
         "blockchain",
         "forensics",
