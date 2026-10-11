@@ -1,5 +1,10 @@
 const CANONICAL_HOST = "web.synertalk.com";
 const REDIRECT_HOSTS = new Set(["synertalk.com", "www.synertalk.com"]);
+// MTA-STS policy host (RFC 8461). The policy lists the MX hosts of synertalk.com: if the MX records
+// change (e.g. moving inbound mail to Proton), update .well-known/mta-sts.txt AND the id in the
+// _mta-sts.synertalk.com TXT record.
+const MTA_STS_HOST = "mta-sts.synertalk.com";
+const MTA_STS_PATH = "/.well-known/mta-sts.txt";
 
 export default {
   async fetch(request, env) {
@@ -11,6 +16,16 @@ export default {
       url.hostname = CANONICAL_HOST;
       url.protocol = "https:";
       return Response.redirect(url.toString(), 301);
+    }
+
+    // mta-sts.synertalk.com serves only the policy file
+    if (url.hostname === MTA_STS_HOST) {
+      if (url.pathname !== MTA_STS_PATH) return new Response("Not found", { status: 404 });
+      const policy = await env.ASSETS.fetch(new URL(MTA_STS_PATH, request.url));
+      return new Response(policy.body, {
+        status: policy.status,
+        headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "max-age=3600" }
+      });
     }
 
     // Markdown Negotiation for AI Agents (Accept: text/markdown)
